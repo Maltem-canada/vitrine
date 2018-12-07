@@ -38,7 +38,7 @@ describe('JobsBoard', () => {
     };
   });
 
-  it('renders the Header component', () => {
+  it('renders the JobsBoard component', () => {
     const wrapper = shallow(
       <JobsBoard
         agglomerateFetch={() => {}}

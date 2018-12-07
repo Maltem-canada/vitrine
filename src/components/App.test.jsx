@@ -47,7 +47,7 @@ describe('App', () => {
         agglomerate={agglomerate}
       />,
     );
-    expect(wrapper.find('#app-content').children()).to.have.lengthOf(3);
+    expect(wrapper.find('#app-content').children()).to.have.lengthOf(4);
   });
 
   it('test the mapStateToProps function', () => {

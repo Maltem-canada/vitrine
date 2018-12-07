@@ -37,7 +37,7 @@ describe('EmployeeBenefits', () => {
     };
   });
 
-  it('renders the Header component', () => {
+  it('renders the EmployeeBenefits component', () => {
     const wrapper = shallow(
       <EmployeeBenefits
         agglomerateFetch={() => {}}

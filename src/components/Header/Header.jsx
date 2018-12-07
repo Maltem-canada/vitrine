@@ -34,6 +34,7 @@ export class Header extends Component {
   render() {
     const {
       agglomerate: {
+        expertiseTitle,
         benefitsTitle,
         jobsBoardTitle,
       },
@@ -57,6 +58,9 @@ export class Header extends Component {
             <a href="#welcome">
               <img className="header-logo" src={MaltemLogo} alt="Maltem logo" />
             </a>
+          </li>
+          <li>
+            <a href="#expertise">{expertiseTitle}</a>
           </li>
           <li>
             <a href="#employee-benefits">{benefitsTitle}</a>

@@ -9,6 +9,7 @@ export const initialState = {
   jobs: [],
   photoWelcome: {},
   photoJobsBoard: {},
+  expertise: [],
   isLoading: false,
   hasErrored: false,
   hasLoaded: false,

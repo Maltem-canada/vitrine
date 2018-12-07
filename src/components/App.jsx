@@ -7,6 +7,7 @@ import SlideComponent from './Common/Slide/Slide';
 import WelcomeComp from './Welcome/Welcome';
 import EmployeeBenefitsComp from './EmployeeBenefits/EmployeeBenefits';
 import JobsBoardComp from './JobsBoard/JobsBoard';
+import ExpertiseComp from './Expertise/Expertise';
 
 export class App extends Component {
   componentDidMount() {
@@ -33,6 +34,9 @@ export class App extends Component {
       <div id="app-content">
         <SlideComponent style={App.getStyle(photoWelcome.url)} className="slide-welcome" id="welcome">
           <WelcomeComp />
+        </SlideComponent>
+        <SlideComponent className="slide-expertise" id="expertise">
+          <ExpertiseComp />
         </SlideComponent>
         <SlideComponent className="slide-employee" id="employee-benefits">
           <EmployeeBenefitsComp />

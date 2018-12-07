@@ -6,7 +6,7 @@ import { describe, it, beforeEach } from 'mocha';
 import sinon from 'sinon';
 import Adapter from 'enzyme-adapter-react-16';
 import sinonChai from 'sinon-chai';
-import { Header } from './Header.jsx';
+import { Expertise } from './Expertise.jsx';
 
 chai.should();
 chai.use(sinonChai);
@@ -18,40 +18,63 @@ const dispatchSpy = sinon.spy();
 
 const {
   mapStateToProps, mapDispatchToProps,
-} = proxyquire('./Header.jsx', {
+} = proxyquire('./Expertise.jsx', {
   '../../actions/agglomerate': {
     agglomerateFetchData: () => {},
   },
 });
 
-describe('Header', () => {
+describe('Expertise', () => {
   beforeEach(() => {
     dispatchSpy.resetHistory();
     agglomerate = {
-      generalinformation: {},
-      team: {},
-      keyfigures: [],
-    };
-    global.window = {
-      addEventListener: (action, fct) => {
-        fct();
-      },
-      scrollY: 0,
-      innerHeight: 10,
-    };
-    global.document = {
-      documentElement: {},
+      benefitsTitle: '',
+      expertise: [
+        {
+          id: 1,
+          logo: { src: '' },
+          title: '',
+          description: '',
+          hashtag: '1',
+        },
+        {
+          id: 2,
+          logo: { src: '' },
+          title: '',
+          description: '',
+          hashtag: '2',
+        },
+        {
+          id: 3,
+          logo: { src: '' },
+          title: '',
+          description: '',
+          hashtag: '3',
+        },
+      ],
     };
   });
 
-  it('renders the Header component', () => {
+  it('renders the Expertise component', () => {
     const wrapper = shallow(
-      <Header
+      <Expertise
         agglomerateFetch={() => {}}
         agglomerate={agglomerate}
       />,
     );
-    expect(wrapper.find('.header ul').children()).to.have.lengthOf(4);
+    wrapper.find('.hashtags-item:first-child > button').simulate('click');
+    wrapper.find('.hashtags-item:first-child > button').simulate('keyPress');
+    expect(wrapper.find('.exps').children()).to.have.lengthOf(3);
+  });
+
+  it('renders the Expertise component', () => {
+    const wrapper = shallow(
+      <Expertise
+        agglomerateFetch={() => {}}
+        agglomerate={agglomerate}
+      />,
+    );
+    expect(wrapper.find('.exps').children()).to.have.lengthOf(3);
   });
 
   it('test the mapStateToProps function', () => {

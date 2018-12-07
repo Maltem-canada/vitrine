@@ -34,7 +34,7 @@ describe('Welcome', () => {
     };
   });
 
-  it('renders the Header component', () => {
+  it('renders the Welcome component', () => {
     const wrapper = shallow(
       <Welcome
         agglomerateFetch={() => {}}

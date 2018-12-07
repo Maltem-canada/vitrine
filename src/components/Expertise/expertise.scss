@@ -1,0 +1,51 @@
+@keyframes show {
+  from {
+    opacity: 0;
+    display: none;
+  }
+  to {
+    opacity: 1;
+    display: flex;
+  }
+}
+
+.slide-expertise {
+  background-color: #FFFFFF;
+  padding: 100px;
+  .expertise {
+    .hashtags {
+      text-align: center;
+      margin-bottom: 50px;
+      &-item {
+        cursor: pointer;
+        margin-right: 20px;
+      }
+    }
+    .exps {
+      li {
+        background: transparent;
+      }
+      &-item {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: flex-start;
+        img {
+          max-width: 30vw;
+          padding-right: 50px;
+        }
+        &-description {
+          text-align: justify;
+        }
+      }
+      .show {
+        animation: show .5s 0ms 1 normal ease-in forwards;
+      }
+      .hide {
+        display: none;
+      }
+    }
+  }
+}

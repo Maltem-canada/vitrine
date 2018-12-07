@@ -23,6 +23,7 @@ export class Welcome extends Component {
       <div className="welcome">
         <h1>
           {titleWhite}
+          &nbsp;
           <span className="red">{titleRed}</span>
         </h1>
         <p>
