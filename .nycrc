@@ -1,0 +1,29 @@
+{
+  "statements": 83,
+  "branches": 69,
+  "functions": 68,
+  "lines": 84,
+  "exclude": [
+    "**/*.test.jsx",
+    "**/*.test.js",
+    "dist"
+  ],
+  "reporter": [
+    "json",
+    "lcov",
+    "text-summary"
+  ],
+  "require": [
+    "babel-core/register"
+  ],
+  "extension": [
+    ".js",
+    ".jsx"
+  ],
+  "sourceMap": true,
+  "cache": false,
+  "all": false,
+  "instrument": true,
+  "check-coverage": true,
+  "report-dir": "./coverage"
+}

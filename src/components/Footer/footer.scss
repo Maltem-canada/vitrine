@@ -1,0 +1,30 @@
+.footer {
+  color: #EEEEEE;
+  background-color: var(--maltem_black);
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  a {
+    color: #EEEEEE;
+    text-decoration: none;
+  }
+  > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+  }
+  h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #6a6a6a;
+  }
+}

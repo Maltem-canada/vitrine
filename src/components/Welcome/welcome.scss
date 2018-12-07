@@ -1,0 +1,15 @@
+.slide-welcome {
+  .slide-content {
+    width: 100vw;
+  }
+
+  .welcome {
+    text-align: center;
+    color: #FFFFFF;
+    background: rgba(17,17,17,.6);
+    box-shadow: 0px 0px 200px 200px rgba(17,17,17,.6);
+    h1 {
+      font-size: 4em;
+    }
+  }
+}

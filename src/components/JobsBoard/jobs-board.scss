@@ -1,0 +1,31 @@
+.slide-jobs {
+  color: #FFFFFF;
+  .slide-content {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    min-width: 100vw;
+    background-color: rgba(17,17,17,.5);
+    .jobs-board > * {
+      width: 90vw;
+    }
+    .jobs {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      &-item {
+        width: 20vw;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        align-content: center;
+        margin: 30px;
+      }
+    }
+  }
+}

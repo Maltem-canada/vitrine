@@ -1,0 +1,91 @@
+:root {
+  --maltem_red: rgb(209, 42, 60);
+  --maltem_black: rgb(17, 17, 17);
+}
+
+@font-face {
+  font-family: MaltemFont;
+  src: url('./assets/font/Caviar-Dreams/CaviarDreams.ttf');
+}
+
+html, body {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: flex-start;
+  font-family: "MaltemFont";
+  background-color: var(--maltem_black);
+}
+
+#app, #app-content, #app > div {
+  height: 100%;
+}
+
+.red {
+  color: var(--maltem_red);
+}
+
+h1 {
+  text-align: center;
+}
+
+#app-content {
+  > * {
+    box-shadow: inset 0 0 40px 10px rgba(0,0,0,0.75);
+  }
+  > *:nth-child(odd) {
+    clip-path: polygon(0 0, 95% 10%, 95% 90%, 0 100%);
+  }
+  > *:nth-child(even) {
+    clip-path: polygon(5% 10%, 100% 0, 100% 100%, 5% 90%);
+  }
+}
+@media screen and (orientation:portrait) {
+  #app-content {
+    > *:nth-child(odd) {
+      clip-path: polygon(0 0, 95% 3%, 95% 97%, 0 100%);
+    }
+    > *:nth-child(even) {
+      clip-path: polygon(5% 3%, 100% 0, 100% 100%, 5% 97%);
+    }
+  }
+}
+
+img {
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+@media (min-width: 1025px) {
+  .main-title {
+    padding-top: 50px;
+  }
+}
+
+.main-title {
+  text-align: center;
+  font-size: 2.5em;
+  color: var(--maltem_red);
+  margin-bottom: 20px;
+  :after, :before {
+    position: absolute;
+    margin-top: 25px;
+    overflow: hidden;
+    height: 3px;
+    content: '\a0';
+    background-color: var(--maltem_red);
+    width: 10%;
+    margin-left: 3%;
+  }
+  :before {
+    margin-left: -13%;
+    text-align: right;
+  }
+}
