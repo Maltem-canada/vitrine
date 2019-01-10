@@ -8,6 +8,7 @@ import WelcomeComp from './Welcome/Welcome';
 import EmployeeBenefitsComp from './EmployeeBenefits/EmployeeBenefits';
 import JobsBoardComp from './JobsBoard/JobsBoard';
 import ExpertiseComp from './Expertise/Expertise';
+import TransitionComp from './Common/Transition/Transition';
 
 export class App extends Component {
   componentDidMount() {
@@ -18,7 +19,6 @@ export class App extends Component {
   static getStyle(photo) {
     return {
       background: `url("${config.backendURL}${photo}") center center fixed`,
-      backgroundSize: 'cover',
     };
   }
 
@@ -27,6 +27,8 @@ export class App extends Component {
       agglomerate: {
         photoWelcome,
         photoJobsBoard,
+        transition1Photo,
+        transition1Text,
       },
     } = this.props;
 
@@ -37,6 +39,11 @@ export class App extends Component {
         </SlideComponent>
         <SlideComponent className="slide-expertise" id="expertise">
           <ExpertiseComp />
+        </SlideComponent>
+        <SlideComponent style={App.getStyle(transition1Photo.url)} className="slide-expertise" id="expertise">
+          <TransitionComp
+            content={transition1Text}
+          />
         </SlideComponent>
         <SlideComponent className="slide-employee" id="employee-benefits">
           <EmployeeBenefitsComp />

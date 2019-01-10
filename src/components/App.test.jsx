@@ -37,6 +37,7 @@ describe('App', () => {
     agglomerate = {
       photoWelcome: {},
       photoJobsBoard: {},
+      transition1Photo: {},
     };
   });
 
@@ -47,7 +48,7 @@ describe('App', () => {
         agglomerate={agglomerate}
       />,
     );
-    expect(wrapper.find('#app-content').children()).to.have.lengthOf(4);
+    expect(wrapper.find('#app-content').children()).to.have.lengthOf(5);
   });
 
   it('test the mapStateToProps function', () => {

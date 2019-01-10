@@ -10,6 +10,7 @@ export const initialState = {
   photoWelcome: {},
   photoJobsBoard: {},
   expertise: [],
+  transition1Photo: {},
   isLoading: false,
   hasErrored: false,
   hasLoaded: false,

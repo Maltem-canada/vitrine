@@ -39,21 +39,22 @@ h1 {
 #app-content {
   > * {
     box-shadow: inset 0 0 40px 10px rgba(0,0,0,0.75);
+    background-size: cover !important;
   }
   > *:nth-child(odd) {
-    clip-path: polygon(0 0, 95% 10%, 95% 90%, 0 100%);
+    clip-path: polygon(0 0, 98% 0%, 98% 100%, 0 100%);
   }
   > *:nth-child(even) {
-    clip-path: polygon(5% 10%, 100% 0, 100% 100%, 5% 90%);
+    clip-path: polygon(2% 0%, 100% 0, 100% 100%, 2% 100%);
   }
 }
 @media screen and (orientation:portrait) {
   #app-content {
     > *:nth-child(odd) {
-      clip-path: polygon(0 0, 95% 3%, 95% 97%, 0 100%);
+      clip-path: polygon(0 0, 95% 0%, 95% 100%, 0 100%);
     }
     > *:nth-child(even) {
-      clip-path: polygon(5% 3%, 100% 0, 100% 100%, 5% 97%);
+      clip-path: polygon(5% 0%, 100% 0, 100% 100%, 5% 100%);
     }
   }
 }
