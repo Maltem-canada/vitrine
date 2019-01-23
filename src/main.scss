@@ -21,6 +21,17 @@ html, body {
   background-color: var(--maltem_white);
 }
 
+::-webkit-scrollbar, ::-webkit-scrollbar-track {
+  width: 5px;
+  border-left: 1px solid var(--maltem_grey);
+  &:before {
+    background-color: var(--maltem_red);
+  }
+}
+::-webkit-scrollbar-thumb {
+  background: var(--maltem_red);
+}
+
 #app {
   font-size: 1.5em;
   display: flex;
