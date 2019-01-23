@@ -31,11 +31,17 @@
       margin-bottom: 50px;
       display: flex;
       flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-evenly;
+      flex-wrap: wrap;
+      justify-content: space-around;
       align-items: center;
       align-content: space-evenly;
       &-item {
+        width: 15%;
+        padding: 20px;
+        font-size: 0.7em;
+        &-image {
+          max-width: 10vw;
+        }
         &-hashtag {
           color: var(--maltem_red);
         }
