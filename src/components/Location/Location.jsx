@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { agglomerateFetchData } from '../../actions/agglomerate';
+import './location.scss';
 import config from '../../config';
-import './employee-benefits.scss';
 
-export class EmployeeBenefits extends Component {
+export class Location extends Component {
   componentDidMount() {
     const { agglomerateFetch } = this.props;
     agglomerateFetch();
@@ -14,30 +14,19 @@ export class EmployeeBenefits extends Component {
   render() {
     const {
       agglomerate: {
-        benefitsTitle,
-        benefits,
+        locationImage,
       },
     } = this.props;
 
     return (
-      <div className="employee">
-        <h1 className="title">{benefitsTitle}</h1>
-        <div className="employee-benefits">
-          {
-            benefits.map(({ id, logo, description }) => (
-              <div className="employee-benefits-item" key={id}>
-                <img src={`${config.backendURL}${logo.url}`} alt="logo" />
-                <div className="employee-benefits-item-content">{description}</div>
-              </div>
-            ))
-          }
-        </div>
+      <div className="location">
+        <img alt="Maltem group locations" src={`${config.backendURL}${locationImage.url}`} />
       </div>
     );
   }
 }
 
-EmployeeBenefits.propTypes = {
+Location.propTypes = {
   agglomerateFetch: PropTypes.func.isRequired,
   agglomerate: PropTypes.objectOf(Object).isRequired,
 };
@@ -50,4 +39,4 @@ export const mapDispatchToProps = dispatch => ({
   agglomerateFetch: () => dispatch(agglomerateFetchData()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(EmployeeBenefits);
+export default connect(mapStateToProps, mapDispatchToProps)(Location);

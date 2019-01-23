@@ -11,12 +11,6 @@ export class Expertise extends Component {
     agglomerateFetch();
   }
 
-  changeHashtag(hashtag) {
-    this.setState({
-      select: hashtag,
-    });
-  }
-
   render() {
     const {
       agglomerate: {
@@ -25,46 +19,24 @@ export class Expertise extends Component {
       },
     } = this.props;
 
-    // eslint-disable-next-line react/destructuring-assignment
-    const select = (this.state && this.state.select)
-      || (expertise.length && expertise[0].hashtag);
-
     return (
       <div className="expertise">
-        <h1 className="title">{expertiseTitle}</h1>
+        <h1 className="expertise-title">{expertiseTitle}</h1>
         <div className="hashtags">
           {
-            expertise.map(({ id, hashtag }) => (
-              <span key={id} className="hashtags-item">
-                <button
-                  type="button"
-                  onKeyPress={() => this.changeHashtag(hashtag)}
-                  onClick={() => this.changeHashtag(hashtag)}
-                >
-                  #
-                  {hashtag}
-                </button>
-              </span>
-            ))
-          }
-        </div>
-        <div className="exps">
-          {
             expertise.map(({
-              id,
-              logo,
-              description,
-              hashtag,
-            }) => {
-              const cl = (select === hashtag) ? 'show' : 'hide';
-
-              return (
-                <div className={`exps-item ${cl}`} key={id}>
-                  <img src={`${config.backendURL}${logo.url}`} alt="logo" />
-                  <div className="exps-item-description">{description}</div>
-                </div>
-              );
-            })
+              hashtag, description, logo, id,
+            }) => (
+              <div className="hashtags-item" key={id}>
+                <img
+                  className="hashtags-item-image"
+                  alt={`Maltem ${hashtag} expertise`}
+                  src={config.backendURL + logo.url}
+                />
+                <p className="hashtags-item-hashtag">{hashtag}</p>
+                <p className="hashtags-item-description">{description}</p>
+              </div>
+            ))
           }
         </div>
       </div>

@@ -35,6 +35,7 @@ describe('JobsBoard', () => {
         { id: 3, name: '', description: 'desc3' },
         { id: 4, name: '', description: 'desc4' },
       ],
+      photoJobsBoard: {},
     };
   });
 
@@ -43,9 +44,10 @@ describe('JobsBoard', () => {
       <JobsBoard
         agglomerateFetch={() => {}}
         agglomerate={agglomerate}
+        togglePopup={() => {}}
       />,
     );
-    expect(wrapper.find('.jobs').children()).to.have.lengthOf(4);
+    expect(wrapper.find('.jobs-list').children()).to.have.lengthOf(4);
   });
 
   it('test the mapStateToProps function', () => {

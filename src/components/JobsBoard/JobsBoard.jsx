@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/fontawesome-free-solid';
 import { agglomerateFetchData } from '../../actions/agglomerate';
 import './jobs-board.scss';
+import config from '../../config';
 
 export class JobsBoard extends Component {
   componentDidMount() {
@@ -10,27 +16,73 @@ export class JobsBoard extends Component {
     agglomerateFetch();
   }
 
+  getPopupContent(data) {
+    const { togglePopup } = this.props;
+    return (
+      <div className="jobs-popup">
+        <button
+          className="jobs-popup-close"
+          type="submit"
+          onClick={() => togglePopup(false)}
+          onKeyPress={() => togglePopup(false)}
+        >
+          <FontAwesomeIcon icon={faTimes} />
+        </button>
+        <div className="jobs-popup-content">
+          <h1 className="jobs-popup-content-name">{data.name}</h1>
+          <div className="jobs-popup-content-description">{data.description}</div>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     const {
       agglomerate: {
         jobsBoardTitle,
         jobs,
+        photoJobsBoard,
       },
+      togglePopup,
     } = this.props;
 
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      initialSlide: 0,
+      pauseOnFocus: true,
+      pauseOnDotsHover: true,
+      pauseOnHover: true,
+      rows: 1,
+    };
+
+    const style = {
+      background: `url("${config.backendURL}${photoJobsBoard.url}") center center fixed`,
+    };
+
     return (
-      <div className="jobs-board">
-        <h1 className="title">{jobsBoardTitle}</h1>
-        <div className="jobs">
+      <div style={style} className="jobs">
+        <h1 className="jobs-title">{jobsBoardTitle}</h1>
+        <Slider {...settings} className="jobs-list">
           {
-            jobs.map(({ id, name, description }) => (
-              <div key={id} className="jobs-item">
-                <div>{name}</div>
-                <div>{description}</div>
-              </div>
+            jobs.map(job => (
+              <button
+                key={job.id}
+                type="submit"
+                className="jobs-list-item"
+                onClick={() => togglePopup(true, this.getPopupContent(job))}
+                onKeyPress={() => togglePopup(true, this.getPopupContent(job))}
+              >
+                <div>{job.name}</div>
+              </button>
             ))
           }
-        </div>
+        </Slider>
       </div>
     );
   }
@@ -39,6 +91,7 @@ export class JobsBoard extends Component {
 JobsBoard.propTypes = {
   agglomerateFetch: PropTypes.func.isRequired,
   agglomerate: PropTypes.objectOf(Object).isRequired,
+  togglePopup: PropTypes.func.isRequired,
 };
 
 export const mapStateToProps = ({ agglomerate }) => ({

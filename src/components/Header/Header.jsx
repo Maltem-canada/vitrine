@@ -10,8 +10,8 @@ export class Header extends Component {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
     this.state = {
-      transparent: 0,
       percentageScroll: 0,
+      headerClass: '',
     };
   }
 
@@ -26,49 +26,45 @@ export class Header extends Component {
     const scrollPos = document.documentElement.scrollTop;
     const documentHeight = document.documentElement.scrollHeight;
     this.setState({
-      transparent: 1 - (windowHeight - scrollPos) / windowHeight,
       percentageScroll: (scrollPos) * 100 / (documentHeight - windowHeight),
+      headerClass: ((scrollPos + 10) > windowHeight) ? 'header-fixed' : '',
     });
   }
 
   render() {
     const {
       agglomerate: {
-        expertiseTitle,
-        benefitsTitle,
-        jobsBoardTitle,
+        headerExpertiseTitle,
+        headerServiceTitle,
+        headerPhilosophyTitle,
+        headerTeamTitle,
+        headerJobsTitle,
+        headerGroupTitle,
+        headerContactTitle,
       },
     } = this.props;
     const {
-      transparent,
       percentageScroll,
+      headerClass,
     } = this.state;
-
-    const headerStyle = {
-      backgroundColor: `rgba(17,17,17,${transparent})`,
-    };
     const indicatorStyle = {
       width: `${percentageScroll}%`,
     };
 
     return (
-      <nav className="header" style={headerStyle}>
-        <ul>
-          <li>
-            <a href="#welcome">
-              <img className="header-logo" src={MaltemLogo} alt="Maltem logo" />
-            </a>
-          </li>
-          <li>
-            <a href="#expertise">{expertiseTitle}</a>
-          </li>
-          <li>
-            <a href="#employee-benefits">{benefitsTitle}</a>
-          </li>
-          <li>
-            <a href="#jobs-board">{jobsBoardTitle}</a>
-          </li>
-        </ul>
+      <nav className={`header ${headerClass}`}>
+        <div className="header-content">
+          <a href="#welcome">
+            <img className="header-logo" src={MaltemLogo} alt="Maltem logo" />
+          </a>
+          <a href="#expertise">{headerExpertiseTitle}</a>
+          <a href="#services">{headerServiceTitle}</a>
+          <a href="#philosophy">{headerPhilosophyTitle}</a>
+          <a href="#team">{headerTeamTitle}</a>
+          <a href="#jobs-board">{headerJobsTitle}</a>
+          <a href="#group">{headerGroupTitle}</a>
+          <a href="#contact">{headerContactTitle}</a>
+        </div>
         <div className="header-scroll">
           <div className="header-scroll-indicator" style={indicatorStyle} />
         </div>

@@ -1,32 +1,70 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Typist from 'react-typist';
 import { agglomerateFetchData } from '../../actions/agglomerate';
 import './welcome.scss';
+import config from '../../config';
 
 export class Welcome extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { display: 'none', margin: '100vh' };
+    this.stopTyping = this.stopTyping.bind(this);
+  }
+
   componentDidMount() {
     const { agglomerateFetch } = this.props;
     agglomerateFetch();
   }
 
+  stopTyping() {
+    this.setState({ display: '', margin: 0 });
+  }
+
   render() {
     const {
       agglomerate: {
+        photoWelcome,
         titleWhite,
         titleRed,
         titleSub,
+        welcomeSentence,
       },
     } = this.props;
 
+    const { display, margin } = this.state;
+    const style = { display };
+
     return (
       <div className="welcome">
-        <h1>
-          {titleWhite}
+        <div style={{ marginBottom: margin }}>
+          { welcomeSentence
+            && (
+            <Typist
+              className="welcome-typing"
+              onTypingDone={this.stopTyping}
+              stdTypingDelay={10}
+              avgTypingDelay={10}
+              cursor={{ blink: true }}
+            >
+              {welcomeSentence}
+            </Typist>
+            )
+          }
+        </div>
+        <h1 style={style}>
+          <span className="welcome-red">{titleWhite}</span>
           &nbsp;
-          <span className="red">{titleRed}</span>
+          <span>{titleRed}</span>
         </h1>
-        <p>
+        <img
+          style={style}
+          className="welcome-image"
+          src={config.backendURL + photoWelcome.url}
+          alt="Maltem Welcome"
+        />
+        <p style={style}>
           {titleSub}
         </p>
       </div>

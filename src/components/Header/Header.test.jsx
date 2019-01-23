@@ -28,9 +28,13 @@ describe('Header', () => {
   beforeEach(() => {
     dispatchSpy.resetHistory();
     agglomerate = {
-      generalinformation: {},
-      team: {},
-      keyfigures: [],
+      headerExpertiseTitle: '',
+      headerServiceTitle: '',
+      headerPhilosophyTitle: '',
+      headerTeamTitle: '',
+      headerJobsTitle: '',
+      headerGroupTitle: '',
+      headerContactTitle: '',
     };
     global.window = {
       addEventListener: (action, fct) => {
@@ -51,7 +55,7 @@ describe('Header', () => {
         agglomerate={agglomerate}
       />,
     );
-    expect(wrapper.find('.header ul').children()).to.have.lengthOf(4);
+    expect(wrapper.find('.header-content').children()).to.have.lengthOf(8);
   });
 
   it('test the mapStateToProps function', () => {

@@ -5,12 +5,16 @@ import {
 } from '../constants/action-types';
 
 export const initialState = {
-  benefits: [],
   jobs: [],
   photoWelcome: {},
   photoJobsBoard: {},
   expertise: [],
-  transition1Photo: {},
+  services: [],
+  ourPhilosophyPhoto: {},
+  philosophyLastImage: {},
+  philosophies: [],
+  teammembers: [],
+  locationImage: {},
   isLoading: false,
   hasErrored: false,
   hasLoaded: false,

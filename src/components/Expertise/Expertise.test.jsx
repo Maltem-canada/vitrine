@@ -28,26 +28,23 @@ describe('Expertise', () => {
   beforeEach(() => {
     dispatchSpy.resetHistory();
     agglomerate = {
-      benefitsTitle: '',
+      expertiseTitle: '',
       expertise: [
         {
           id: 1,
           logo: { src: '' },
-          title: '',
           description: '',
           hashtag: '1',
         },
         {
           id: 2,
           logo: { src: '' },
-          title: '',
           description: '',
           hashtag: '2',
         },
         {
           id: 3,
           logo: { src: '' },
-          title: '',
           description: '',
           hashtag: '3',
         },
@@ -62,19 +59,7 @@ describe('Expertise', () => {
         agglomerate={agglomerate}
       />,
     );
-    wrapper.find('.hashtags-item:first-child > button').simulate('click');
-    wrapper.find('.hashtags-item:first-child > button').simulate('keyPress');
-    expect(wrapper.find('.exps').children()).to.have.lengthOf(3);
-  });
-
-  it('renders the Expertise component', () => {
-    const wrapper = shallow(
-      <Expertise
-        agglomerateFetch={() => {}}
-        agglomerate={agglomerate}
-      />,
-    );
-    expect(wrapper.find('.exps').children()).to.have.lengthOf(3);
+    expect(wrapper.find('.hashtags').children()).to.have.lengthOf(3);
   });
 
   it('test the mapStateToProps function', () => {

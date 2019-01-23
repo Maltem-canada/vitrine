@@ -12,56 +12,26 @@ chai.use(sinonChai);
 
 configure({ adapter: new Adapter() });
 const proxyquire = noCallThru();
-let agglomerate;
 const dispatchSpy = sinon.spy();
 
-const {
-  mapStateToProps, mapDispatchToProps,
-} = proxyquire('./App.jsx', {
-  '../../actions/agglomerate': {
-    agglomerateFetchData: () => {},
-  },
-});
-
-const { App } = proxyquire('./App.jsx', {
+const App = proxyquire('./App.jsx', {
   './Common/Slide/Slide': '',
   './Welcome/Welcome': '',
-  './GeneralInformation/GeneralInformation': '',
+  './JobsBoard/JobsBoard': '',
+  './Expertise/Expertise': '',
+  './Service/Service': '',
+  './Philosophy/Philosophy': '',
   './Team/Team': '',
-  './KeyFigures/KeyFigures': '',
-});
+  './Location/Location': '',
+}).default;
 
 describe('App', () => {
   beforeEach(() => {
     dispatchSpy.resetHistory();
-    agglomerate = {
-      photoWelcome: {},
-      photoJobsBoard: {},
-      transition1Photo: {},
-    };
   });
 
   it('renders the App component', () => {
-    const wrapper = shallow(
-      <App
-        agglomerateFetch={() => {}}
-        agglomerate={agglomerate}
-      />,
-    );
-    expect(wrapper.find('#app-content').children()).to.have.lengthOf(5);
-  });
-
-  it('test the mapStateToProps function', () => {
-    const props = mapStateToProps({
-      agglomerate,
-    });
-    expect(props).to.have.be.deep.equal({
-      agglomerate,
-    });
-  });
-
-  it('test the mapDispatchToProps function', () => {
-    mapDispatchToProps(dispatchSpy).agglomerateFetch();
-    expect(dispatchSpy).to.have.been.callCount(1);
+    const wrapper = shallow(<App />);
+    expect(wrapper.find('#app-content').children()).to.have.lengthOf(8);
   });
 });

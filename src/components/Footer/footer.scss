@@ -8,6 +8,34 @@
   justify-content: space-around;
   align-items: center;
   align-content: center;
+  &-right {
+    text-align: right;
+  }
+  &-title {
+    &-left {
+      text-align: left;
+      &:after {
+        background: none repeat scroll 0 0 var(--maltem_red);
+        content: "";
+        display: block;
+        height: 5px;
+        position: relative;
+        width: 100px;
+      }
+    }
+    &-right {
+      text-align: right;
+      &:after {
+        background: none repeat scroll 0 0 var(--maltem_red);
+        content: "";
+        display: block;
+        height: 5px;
+        position: relative;
+        width: 100px;
+        margin-left: 110px;
+      }
+    }
+  }
   a {
     color: #EEEEEE;
     text-decoration: none;
@@ -17,7 +45,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     align-content: center;
     width: 100%;
   }

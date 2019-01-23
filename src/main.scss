@@ -1,19 +1,28 @@
 :root {
   --maltem_red: rgb(209, 42, 60);
   --maltem_black: rgb(17, 17, 17);
+  --maltem_white: #FFFFFF;
+  --maltem_grey: #E8E8E8;
+  --maltem_yellow: rgb(255, 233, 173);
 }
 
 @font-face {
   font-family: MaltemFont;
-  src: url('./assets/font/Caviar-Dreams/CaviarDreams.ttf');
+  src: url('./assets/font/Crystal.ttf');
+}
+@font-face {
+  font-family: MaltemSecondFont;
+  src: url('./assets/font/Vanadine Regular.ttf');
 }
 
 html, body {
   margin: 0;
   scroll-behavior: smooth;
+  background-color: var(--maltem_white);
 }
 
 #app {
+  font-size: 1.5em;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -21,42 +30,33 @@ html, body {
   align-items: stretch;
   align-content: flex-start;
   font-family: "MaltemFont";
-  background-color: var(--maltem_black);
+  background-color: var(--maltem_white);
 }
 
 #app, #app-content, #app > div {
   height: 100%;
 }
 
-.red {
-  color: var(--maltem_red);
+#popup {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: var(--maltem_white);
+  z-index: 9999;
+}
+.popup-show {
+  display: block;
+}
+.popup-hide {
+  display: none;
 }
 
 h1 {
   text-align: center;
-}
-
-#app-content {
-  > * {
-    box-shadow: inset 0 0 40px 10px rgba(0,0,0,0.75);
-    background-size: cover !important;
-  }
-  > *:nth-child(odd) {
-    clip-path: polygon(0 0, 98% 0%, 98% 100%, 0 100%);
-  }
-  > *:nth-child(even) {
-    clip-path: polygon(2% 0%, 100% 0, 100% 100%, 2% 100%);
-  }
-}
-@media screen and (orientation:portrait) {
-  #app-content {
-    > *:nth-child(odd) {
-      clip-path: polygon(0 0, 95% 0%, 95% 100%, 0 100%);
-    }
-    > *:nth-child(even) {
-      clip-path: polygon(5% 0%, 100% 0, 100% 100%, 5% 100%);
-    }
-  }
+  font-size: 2em;
+  font-family: MaltemSecondFont;
 }
 
 img {
@@ -70,15 +70,10 @@ img {
   }
 }
 
-.slide {
-  margin-bottom: 20px;
-}
-
 .main-title {
   text-align: center;
   font-size: 2.5em;
   color: var(--maltem_red);
-  margin-bottom: 20px;
   :after, :before {
     position: absolute;
     margin-top: 25px;

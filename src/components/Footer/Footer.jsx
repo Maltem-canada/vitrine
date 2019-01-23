@@ -16,6 +16,7 @@ export class Footer extends Component {
         address1,
         address2,
         address3,
+        address4,
         phoneNumber,
         email,
       },
@@ -25,15 +26,17 @@ export class Footer extends Component {
       <div className="footer">
         <div>
           <div>
-            <h4>Location</h4>
+            <h1 className="footer-title-left">LOCATION</h1>
             {address1}
             <br />
             {address2}
             <br />
             {address3}
+            <br />
+            {address4}
           </div>
-          <div>
-            <h4>Contact</h4>
+          <div className="footer-right" id="contact">
+            <h1 className="footer-title-right">CONTACT</h1>
             <a href={`mailto:${email}`}>{email}</a>
             <br />
             <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>

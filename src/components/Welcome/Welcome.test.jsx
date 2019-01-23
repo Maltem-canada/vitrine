@@ -28,9 +28,11 @@ describe('Welcome', () => {
   beforeEach(() => {
     dispatchSpy.resetHistory();
     agglomerate = {
+      photoWelcome: {},
       titleWhite: '',
       titleRed: '',
       titleSub: '',
+      welcomeSentence: '',
     };
   });
 
@@ -41,7 +43,7 @@ describe('Welcome', () => {
         agglomerate={agglomerate}
       />,
     );
-    expect(wrapper.find('.welcome').children()).to.have.lengthOf(2);
+    expect(wrapper.find('.welcome').children()).to.have.lengthOf(4);
   });
 
   it('test the mapStateToProps function', () => {

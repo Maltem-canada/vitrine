@@ -1,28 +1,84 @@
-.slide-jobs {
-  color: #FFFFFF;
-  .slide-content {
-    padding-top: 100px;
-    padding-bottom: 100px;
-    min-width: 100vw;
-    background-color: rgba(17,17,17,.5);
-    .jobs {
+.jobs {
+  padding: 50px;
+  color: var(--maltem_white);
+  background-size: cover !important;
+  &-popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--maltem_white);
+    color: var(--maltem_black);
+    padding: 50px;
+    &-close {
+      border: 0;
+      background-color: transparent;
+      font-size: 2em;
+      position: absolute;
+      right: 50px;
+      cursor: pointer;
+    }
+    &-content {
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      justify-content: space-evenly;
       align-items: center;
-      align-content: center;
-      &-item {
-        width: 30vw;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: space-evenly;
-        align-items: center;
-        align-content: center;
-        margin: 30px;
+      height: 100%;
+      &-name {
+        text-align: left;
+        &:after {
+          background: none repeat scroll 0 0 var(--maltem_red);
+          content: "";
+          display: block;
+          height: 5px;
+          position: relative;
+          width: 100px;
+        }
       }
     }
+  }
+  &-title {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    text-align: left;
+    &:after {
+      background: none repeat scroll 0 0 var(--maltem_red);
+      content: "";
+      display: block;
+      height: 5px;
+      position: relative;
+      width: 100px;
+    }
+  }
+  &-list {
+    margin-bottom: 100px;
+    &-item {
+      &:focus {
+        outline-width: 0;
+      }
+      &:hover {
+        cursor: pointer;
+        font-size: 1.7em;
+      }
+      color: var(--maltem_black);
+      text-align: center;
+      font-size: 1.5em;
+      height: 20vw;
+      width: 20vw !important;
+      margin-left: 1vw;
+      background-color: rgba(255, 255, 255, .9);
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: font-size 0.05s linear;
+    }
+  }
+  .slick-next:before {
+    content: '\25b6';
+  }
+  .slick-prev:before {
+    content: '\25C0';
   }
 }

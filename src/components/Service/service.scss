@@ -1,0 +1,26 @@
+.slide-services {
+  padding-top: 100px;
+  width: 30vw;
+  margin-left: 50px;
+  margin-bottom: -50px;
+  .slide-content {
+    z-index: 1;
+    .service {
+      &-wrapper {
+        padding: 20px;
+        background-color: var(--maltem_grey);
+      }
+      &-title {
+        text-align: left;
+        &:after {
+          background: none repeat scroll 0 0 var(--maltem_red);
+          content: "";
+          display: block;
+          height: 5px;
+          position: relative;
+          width: 100px;
+        }
+      }
+    }
+  }
+}
