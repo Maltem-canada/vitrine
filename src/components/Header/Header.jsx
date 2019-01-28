@@ -12,6 +12,8 @@ export class Header extends Component {
     super(props);
     this.headerClicked = this.headerClicked.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
+    this.setWrapperRef = this.setWrapperRef.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
     this.state = {
       percentageScroll: 0,
       headerClass: '',
@@ -23,6 +25,15 @@ export class Header extends Component {
     const { agglomerateFetch } = this.props;
     agglomerateFetch();
     window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('mousedown', this.handleClickOutside);
+  }
+
+  setWrapperRef(node) {
+    this.wrapperRef = node;
   }
 
   handleScroll() {
@@ -40,6 +51,20 @@ export class Header extends Component {
     this.setState({
       displayHeader: (displayHeader === 'hide') ? 'show' : 'hide',
     });
+  }
+
+  handleClickOutside(event) {
+    const {
+      wrapperRef,
+      state: {
+        displayHeader,
+      },
+    } = this;
+    if (wrapperRef && !wrapperRef.contains(event.target) && displayHeader === 'show') {
+      this.setState({
+        displayHeader: 'hide',
+      });
+    }
   }
 
   render() {
@@ -65,7 +90,7 @@ export class Header extends Component {
 
     return (
       <nav className={`header ${headerClass}`}>
-        <div className={`header-content ${displayHeader}`}>
+        <div className={`header-content ${displayHeader}`} ref={this.setWrapperRef}>
           <a onClick={this.headerClicked} href="#welcome">
             <img className="header-logo" src={MaltemLogo} alt="Maltem logo" />
           </a>
