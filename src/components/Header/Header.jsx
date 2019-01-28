@@ -35,9 +35,10 @@ export class Header extends Component {
     });
   }
 
-  headerClicked(state) {
+  headerClicked() {
+    const { displayHeader } = this.state;
     this.setState({
-      displayHeader: state,
+      displayHeader: (displayHeader === 'hide') ? 'show' : 'hide',
     });
   }
 
@@ -65,16 +66,16 @@ export class Header extends Component {
     return (
       <nav className={`header ${headerClass}`}>
         <div className={`header-content ${displayHeader}`}>
-          <a onClick={() => this.headerClicked('hide')} href="#welcome">
+          <a onClick={this.headerClicked} href="#welcome">
             <img className="header-logo" src={MaltemLogo} alt="Maltem logo" />
           </a>
-          <a onClick={() => this.headerClicked('hide')} href="#expertise">{headerExpertiseTitle}</a>
-          <a onClick={() => this.headerClicked('hide')} href="#services">{headerServiceTitle}</a>
-          <a onClick={() => this.headerClicked('hide')} href="#philosophy">{headerPhilosophyTitle}</a>
-          <a onClick={() => this.headerClicked('hide')} href="#team">{headerTeamTitle}</a>
-          <a onClick={() => this.headerClicked('hide')} href="#jobs-board">{headerJobsTitle}</a>
-          <a onClick={() => this.headerClicked('hide')} href="#group">{headerGroupTitle}</a>
-          <a onClick={() => this.headerClicked('hide')} href="#contact">{headerContactTitle}</a>
+          <a onClick={this.headerClicked} href="#expertise">{headerExpertiseTitle}</a>
+          <a onClick={this.headerClicked} href="#services">{headerServiceTitle}</a>
+          <a onClick={this.headerClicked} href="#philosophy">{headerPhilosophyTitle}</a>
+          <a onClick={this.headerClicked} href="#team">{headerTeamTitle}</a>
+          <a onClick={this.headerClicked} href="#jobs-board">{headerJobsTitle}</a>
+          <a onClick={this.headerClicked} href="#group">{headerGroupTitle}</a>
+          <a onClick={this.headerClicked} href="#contact">{headerContactTitle}</a>
         </div>
         <div className="header-scroll">
           <div className="header-scroll-indicator" style={indicatorStyle} />

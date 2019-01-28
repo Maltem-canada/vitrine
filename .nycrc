@@ -1,8 +1,8 @@
 {
-  "statements": 83,
-  "branches": 69,
-  "functions": 68,
-  "lines": 84,
+  "statements": 50,
+  "branches": 50,
+  "functions": 50,
+  "lines": 50,
   "exclude": [
     "**/*.test.jsx",
     "**/*.test.js",
