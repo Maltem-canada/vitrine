@@ -1,15 +1,30 @@
 .slide-services {
   padding-top: 100px;
   width: 30vw;
+  height: 30vw;
   margin-left: 20%;
-  margin-bottom: -50px;
+  margin-bottom: -10vw;
   text-align: center;
   .slide-content {
+    width: 30vw;
+    height: 30vw;
     z-index: 1;
     .service {
       &-wrapper {
+        width: 30vw;
+        height: 30vw;
         padding: 20px 20px 50px 20px;
         background-color: var(--maltem_grey);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+      }
+      &-item {
+        font-size: 1.5em;
+        color: var(--maltem_red);
       }
     }
   }
