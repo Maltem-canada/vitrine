@@ -62,8 +62,9 @@
   display: none;
 }
 
-@media only screen and (max-width : 750px) {
+@media only screen and (max-width : 1000px) {
   .header {
+    margin-bottom: 100px;
     &-logo {
       height: 20vw;
     }
