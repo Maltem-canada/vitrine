@@ -1,4 +1,5 @@
 .jobs {
+  text-align: center;
   padding: 50px;
   color: var(--maltem_white);
   background-size: cover !important;
@@ -40,7 +41,7 @@
   }
   &-title {
     margin-top: 100px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     text-align: left;
   }
   &-list {
@@ -75,5 +76,12 @@
   }
   .slick-prev:before {
     content: '\25C0';
+  }
+  .slick-dots {
+    bottom: -70px;
+    li button:before, li.slick-active button:before {
+      color: var(--maltem_red);
+      font-size: 15px;
+    }
   }
 }

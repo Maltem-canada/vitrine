@@ -76,6 +76,9 @@ export class JobsBoard extends Component {
             ))
           }
         </Slider>
+        <div>
+          {`${jobs.length} Positions`}
+        </div>
       </div>
     );
   }

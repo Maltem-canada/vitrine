@@ -7,7 +7,7 @@ export const getSlideShowSettings = config => ({
   infinite: true,
   speed: 500,
   slidesToShow: 4,
-  slidesToScroll: 1,
+  slidesToScroll: 3,
   arrows: false,
   autoplay: true,
   autoplaySpeed: 3000,

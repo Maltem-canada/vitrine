@@ -4,7 +4,7 @@
   padding: 5vw;
   &-title {
     text-align: left;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
   }
   &-list {
     &-member {
@@ -20,13 +20,14 @@
         }
       }
       &-description {
+        font-size: 2vw;
         overflow: hidden;
-        margin-top: -19vw;
-        margin-left: 1vw;
-        margin-bottom: 1vw;
+        margin-top: -15.5vw;
+        margin-left: .5vw;
+        margin-bottom: .5vw;
         text-align: center;
-        height: 18vw;
-        width: 18vw;
+        height: 15vw;
+        width: 15vw;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -35,10 +36,14 @@
         opacity: 0;
         visibility: hidden;
         background: var(--maltem_white);
+        > * {
+          margin-left: 2vw;
+          margin-right: 2vw;
+        }
       }
       img {
-        height: 20vw;
-        width: 20vw;
+        height: 16vw;
+        width: 16vw;
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         border-radius: 50%;
@@ -46,7 +51,7 @@
     }
   }
   .slick-dots {
-    bottom: -50px;
+    bottom: -70px;
     li button:before, li.slick-active button:before {
       color: var(--maltem_red);
       font-size: 15px;
