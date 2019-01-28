@@ -3,15 +3,13 @@
   width: 30vw;
   margin-left: 20%;
   margin-bottom: -50px;
+  text-align: center;
   .slide-content {
     z-index: 1;
     .service {
       &-wrapper {
         padding: 20px;
         background-color: var(--maltem_grey);
-      }
-      &-title {
-        text-align: left;
       }
     }
   }

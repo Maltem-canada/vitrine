@@ -21,7 +21,7 @@ export class Service extends Component {
     return (
       <div className="service">
         <div className="service-wrapper">
-          <h1 className="service-title decorate-title">{servicesTitle}</h1>
+          <h1 className="service-title decorate-title-center">{servicesTitle}</h1>
           <div className="service">
             {
               services.map(({ name, id }) => <div key={id} className="service-item">{name}</div>)
