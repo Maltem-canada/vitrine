@@ -60,7 +60,7 @@ export class JobsBoard extends Component {
 
     return (
       <div style={style} className="jobs">
-        <h1 className="jobs-title">{jobsBoardTitle}</h1>
+        <h1 className="jobs-title decorate-title">{jobsBoardTitle}</h1>
         <Slider {...settings} className="jobs-list">
           {
             jobs.map(job => (

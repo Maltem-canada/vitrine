@@ -17,14 +17,6 @@
       font-family: MaltemSecondFont;
       text-align: left;
       margin-bottom: 100px;
-      &:after {
-        background: none repeat scroll 0 0 var(--maltem_red);
-        content: "";
-        display: block;
-        height: 5px;
-        position: relative;
-        width: 100px;
-      }
     }
     .hashtags {
       text-align: center;

@@ -10,14 +10,6 @@
     &-title {
       color: var(--maltem_white);
       text-align: left;
-      &:after {
-        background: none repeat scroll 0 0 var(--maltem_red);
-        content: "";
-        display: block;
-        height: 5px;
-        position: relative;
-        width: 100px;
-      }
     }
   }
   &-content {

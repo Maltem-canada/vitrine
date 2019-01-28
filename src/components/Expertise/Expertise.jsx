@@ -21,7 +21,7 @@ export class Expertise extends Component {
 
     return (
       <div className="expertise">
-        <h1 className="expertise-title">{expertiseTitle}</h1>
+        <h1 className="expertise-title decorate-title">{expertiseTitle}</h1>
         <div className="hashtags">
           {
             expertise.map(({

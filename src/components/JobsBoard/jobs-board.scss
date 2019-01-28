@@ -42,14 +42,6 @@
     margin-top: 100px;
     margin-bottom: 50px;
     text-align: left;
-    &:after {
-      background: none repeat scroll 0 0 var(--maltem_red);
-      content: "";
-      display: block;
-      height: 5px;
-      position: relative;
-      width: 100px;
-    }
   }
   &-list {
     margin-bottom: 100px;

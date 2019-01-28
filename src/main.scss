@@ -82,6 +82,29 @@ img {
   }
 }
 
+.decorate-title {
+  &:after {
+    background: none repeat scroll 0 0 var(--maltem_red);
+    content: "";
+    display: block;
+    height: 5px;
+    position: relative;
+    width: 100px;
+    margin-top: 10px;
+  }
+  &-right {
+    &:after {
+      background: none repeat scroll 0 0 var(--maltem_red);
+      content: "";
+      display: block;
+      height: 5px;
+      width: 60%;
+      margin-left: 40%;
+      margin-top: 10px;
+    }
+  }
+}
+
 .main-title {
   text-align: center;
   font-size: 2.5em;

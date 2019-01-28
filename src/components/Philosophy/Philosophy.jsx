@@ -29,7 +29,7 @@ export class Philosophy extends Component {
     return (
       <div className="philosophy">
         <div className="philosophy-header" style={style}>
-          <h1 className="philosophy-header-title">{philosophyTitle}</h1>
+          <h1 className="philosophy-header-title decorate-title">{philosophyTitle}</h1>
         </div>
         <div className="philosophy-content">
           {

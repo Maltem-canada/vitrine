@@ -40,7 +40,7 @@ export class Team extends Component {
 
     return (
       <div className="team">
-        <h1 className="team-title">{teamTitle}</h1>
+        <h1 className="team-title decorate-title">{teamTitle}</h1>
         <Slider {...settings} className="team-list">
           {
             shuffleArray(teammembers).map(({
