@@ -17,13 +17,17 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     align-content: space-around;
-    > *:hover {
-      color: var(--maltem_red);
+    > * {
+      margin-left: 20px;
+      &:hover {
+        color: var(--maltem_red);
+      }
     }
     :first-child {
+      margin-left: 0;
       padding-left: 20px;
     }
     :last-child {
@@ -33,6 +37,7 @@
   &-scroll {
     width: 100%;
     height: 4px;
+    background: transparent;
     &-indicator {
       background-color: var(--maltem_red);
       height: 4px;
@@ -52,4 +57,47 @@
   animation-fill-mode: forwards;
   animation-name: fixed;
   animation-duration: 1s;
+}
+.header-handler {
+  display: none;
+}
+
+@media only screen and (max-width: 750px) {
+  .header {
+    &-handler {
+      display: block;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      border: 1px solid var(--maltem_grey);
+      border-radius: 5px;
+      padding: 10px;
+      background-color: var(--maltem_white);
+      cursor: pointer;
+    }
+    .show {
+      display: flex;
+      html, body {
+        overflow-y: hidden;
+      }
+    }
+    .hide {
+      display: none;
+      html, body {
+        overflow-y: auto;
+      }
+    }
+    background-color: var(--maltem_white);
+    &-content {
+      flex-direction: column;
+      justify-content: space-evenly;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: var(--maltem_white);
+      z-index: 9999;
+    }
+  }
 }

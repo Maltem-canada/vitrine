@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGripLines } from '@fortawesome/free-solid-svg-icons';
 import { agglomerateFetchData } from '../../actions/agglomerate';
 import MaltemLogo from '../../assets/img/maltem-logo.png';
 import './header.scss';
@@ -8,10 +10,12 @@ import './header.scss';
 export class Header extends Component {
   constructor(props) {
     super(props);
+    this.headerClicked = this.headerClicked.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
     this.state = {
       percentageScroll: 0,
       headerClass: '',
+      displayHeader: 'hide',
     };
   }
 
@@ -31,6 +35,12 @@ export class Header extends Component {
     });
   }
 
+  headerClicked(state) {
+    this.setState({
+      displayHeader: state,
+    });
+  }
+
   render() {
     const {
       agglomerate: {
@@ -46,6 +56,7 @@ export class Header extends Component {
     const {
       percentageScroll,
       headerClass,
+      displayHeader,
     } = this.state;
     const indicatorStyle = {
       width: `${percentageScroll}%`,
@@ -53,21 +64,22 @@ export class Header extends Component {
 
     return (
       <nav className={`header ${headerClass}`}>
-        <div className="header-content">
-          <a href="#welcome">
+        <div className={`header-content ${displayHeader}`}>
+          <a onClick={() => this.headerClicked('hide')} href="#welcome">
             <img className="header-logo" src={MaltemLogo} alt="Maltem logo" />
           </a>
-          <a href="#expertise">{headerExpertiseTitle}</a>
-          <a href="#services">{headerServiceTitle}</a>
-          <a href="#philosophy">{headerPhilosophyTitle}</a>
-          <a href="#team">{headerTeamTitle}</a>
-          <a href="#jobs-board">{headerJobsTitle}</a>
-          <a href="#group">{headerGroupTitle}</a>
-          <a href="#contact">{headerContactTitle}</a>
+          <a onClick={() => this.headerClicked('hide')} href="#expertise">{headerExpertiseTitle}</a>
+          <a onClick={() => this.headerClicked('hide')} href="#services">{headerServiceTitle}</a>
+          <a onClick={() => this.headerClicked('hide')} href="#philosophy">{headerPhilosophyTitle}</a>
+          <a onClick={() => this.headerClicked('hide')} href="#team">{headerTeamTitle}</a>
+          <a onClick={() => this.headerClicked('hide')} href="#jobs-board">{headerJobsTitle}</a>
+          <a onClick={() => this.headerClicked('hide')} href="#group">{headerGroupTitle}</a>
+          <a onClick={() => this.headerClicked('hide')} href="#contact">{headerContactTitle}</a>
         </div>
         <div className="header-scroll">
           <div className="header-scroll-indicator" style={indicatorStyle} />
         </div>
+        <FontAwesomeIcon onClick={this.headerClicked} className="header-handler" icon={faGripLines} />
       </nav>
     );
   }
