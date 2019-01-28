@@ -6,6 +6,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { agglomerateFetchData } from '../../actions/agglomerate';
 import config from '../../config';
+import { getSlideShowSettings, getSlideShowLength } from '../../utils/slideShow';
+import profilePlaceholder from '../../assets/img/profile-placeholder.png';
 import './team.scss';
 
 export class Team extends Component {
@@ -22,25 +24,19 @@ export class Team extends Component {
       },
     } = this.props;
 
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      arrows: false,
-      autoplay: true,
-      autoplaySpeed: 3000,
-      initialSlide: 0,
-      pauseOnFocus: true,
-      pauseOnDotsHover: true,
-      pauseOnHover: true,
-    };
+    const settings = getSlideShowSettings({
+      slidesToShow: getSlideShowLength({
+        dataLength: teammembers.length,
+        maxDisplay: 4,
+      }),
+    });
 
     const shuffleArray = arr => arr
       .map(a => [Math.random(), a])
       .sort((a, b) => a[0] - b[0])
       .map(a => a[1]);
+
+    const getMemberPhoto = ({ photo }) => ((photo && photo.url) ? `${config.backendURL}${photo.url}` : profilePlaceholder);
 
     return (
       <div className="team">
@@ -52,7 +48,7 @@ export class Team extends Component {
             }) => (
               <div key={id} className="team-list-member">
                 <img
-                  src={`${config.backendURL}${photo.url}`}
+                  src={getMemberPhoto({ photo })}
                   alt={`Maltem ${name} team member`}
                 />
                 <div className="team-list-member-description">

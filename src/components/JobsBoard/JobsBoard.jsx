@@ -9,6 +9,7 @@ import { faTimes } from '@fortawesome/fontawesome-free-solid';
 import { agglomerateFetchData } from '../../actions/agglomerate';
 import './jobs-board.scss';
 import config from '../../config';
+import { getSlideShowLength, getSlideShowSettings } from '../../utils/slideShow';
 
 export class JobsBoard extends Component {
   componentDidMount() {
@@ -46,20 +47,12 @@ export class JobsBoard extends Component {
       togglePopup,
     } = this.props;
 
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 3000,
-      initialSlide: 0,
-      pauseOnFocus: true,
-      pauseOnDotsHover: true,
-      pauseOnHover: true,
-      rows: 1,
-    };
+    const settings = getSlideShowSettings({
+      slidesToShow: getSlideShowLength({
+        dataLength: jobs.length,
+        maxDisplay: 4,
+      }),
+    });
 
     const style = {
       background: `url("${config.backendURL}${photoJobsBoard.url}") center center fixed`,
