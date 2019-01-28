@@ -46,6 +46,8 @@
   &-list {
     margin-bottom: 100px;
     &-item {
+      box-shadow: none;
+      border: 0;
       font-family: MaltemSecondFont;
       &:focus {
         outline-width: 0;
