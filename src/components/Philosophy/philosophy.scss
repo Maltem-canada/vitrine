@@ -42,17 +42,22 @@
         align-content: flex-start;
       }
       &-title {
+        z-index: 9999;
         font-size: 3em;
         &-red {
           color: var(--maltem_red);
         }
       }
       &-image {
-        width: 50%;
+        width: 70%;
+        margin-left: -20%;
       }
       &-description {
-
+        text-align: justify;
       }
+    }
+    &-item:not(:first-child) {
+      margin-top: -250px;
     }
   }
   &-last-image {
