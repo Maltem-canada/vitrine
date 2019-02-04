@@ -56,13 +56,13 @@ export default class App extends Component {
         <SlideComponent className="slide-team" id="team">
           <TeamComp />
         </SlideComponent>
+        <SlideComponent className="slide-group" id="group">
+          <LocationComp />
+        </SlideComponent>
         <SlideComponent className="slide-jobs" id="jobs-board">
           <JobsBoardComp
             togglePopup={this.togglePopup}
           />
-        </SlideComponent>
-        <SlideComponent className="slide-team" id="group">
-          <LocationComp />
         </SlideComponent>
         <div id="popup" className={classPopup}>{content}</div>
       </div>
