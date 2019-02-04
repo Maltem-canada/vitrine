@@ -53,7 +53,7 @@ export class Team extends Component {
                 />
                 <div className="team-list-member-description">
                   <div>{name}</div>
-                  <div>{position}</div>
+                  <div className="team-list-member-description-position">{position}</div>
                 </div>
               </div>
             ))
