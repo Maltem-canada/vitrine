@@ -34,4 +34,14 @@ describe('App', () => {
     const wrapper = shallow(<App />);
     expect(wrapper.find('#app-content').children()).to.have.lengthOf(8);
   });
+
+  it('renders the App component and display the popup', () => {
+    const wrapper = shallow(<App />);
+    wrapper.instance().togglePopup(true, <div className="my-test-class">some data</div>);
+    expect(wrapper.find('#popup').find('.my-test-class')).to.have.lengthOf(1);
+    expect(wrapper.find('#popup').props().className).to.equal('popup-show');
+    wrapper.instance().togglePopup(false, <div className="my-test-class">some data</div>);
+    expect(wrapper.find('#popup').children()).to.have.lengthOf(0);
+    expect(wrapper.find('#popup').props().className).to.equal('popup-hide');
+  });
 });

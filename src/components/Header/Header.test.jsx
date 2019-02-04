@@ -15,6 +15,7 @@ configure({ adapter: new Adapter() });
 const proxyquire = noCallThru();
 let agglomerate;
 const dispatchSpy = sinon.spy();
+const removeEventListenerStub = sinon.stub();
 
 const {
   mapStateToProps, mapDispatchToProps,
@@ -40,12 +41,14 @@ describe('Header', () => {
       addEventListener: (action, fct) => {
         fct();
       },
+      removeEventListener: removeEventListenerStub,
       scrollY: 0,
       innerHeight: 10,
     };
     global.document = {
       documentElement: {},
     };
+    removeEventListenerStub.reset();
   });
 
   it('renders the Header component', () => {
@@ -56,6 +59,30 @@ describe('Header', () => {
       />,
     );
     expect(wrapper.find('.header-content').children()).to.have.lengthOf(8);
+  });
+
+  it('renders the Header component and handleClickOutside', () => {
+    const wrapper = shallow(
+      <Header
+        agglomerateFetch={() => {}}
+        agglomerate={agglomerate}
+      />,
+    );
+    expect(wrapper.state().displayHeader === 'hide');
+    expect(wrapper.find('.header-content').props().className).to.equal('header-content hide');
+    wrapper.instance().headerClicked();
+    expect(wrapper.find('.header-content').props().className).to.equal('header-content show');
+    wrapper.find('.header-content').children().first().simulate('click');
+    expect(wrapper.find('.header-content').props().className).to.equal('header-content hide');
+    wrapper.instance().headerClicked();
+    expect(wrapper.find('.header-content').props().className).to.equal('header-content show');
+    expect( // eslint-disable-line no-unused-expressions
+      removeEventListenerStub,
+    ).to.not.have.been.called;
+    wrapper.unmount();
+    expect( // eslint-disable-line no-unused-expressions
+      removeEventListenerStub,
+    ).to.have.been.calledOnce;
   });
 
   it('test the mapStateToProps function', () => {

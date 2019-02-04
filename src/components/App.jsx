@@ -23,7 +23,7 @@ export default class App extends Component {
   togglePopup(display, content) {
     this.setState({
       popup: {
-        content,
+        content: display ? content : '',
         display,
       },
     });

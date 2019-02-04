@@ -60,6 +60,7 @@ export class Header extends Component {
         displayHeader,
       },
     } = this;
+    console.log(wrapperRef);
     if (wrapperRef && !wrapperRef.contains(event.target) && displayHeader === 'show') {
       this.setState({
         displayHeader: 'hide',
