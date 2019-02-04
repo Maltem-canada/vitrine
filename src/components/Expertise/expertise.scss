@@ -30,11 +30,12 @@
       &-item {
         width: 15%;
         padding: 20px;
-        font-size: 0.7em;
+        font-size: 1em;
         &-image {
-          max-width: 10vw;
+          width: 100%;
         }
         &-hashtag {
+          font-size: 1.2em;
           color: var(--maltem_red);
         }
       }
