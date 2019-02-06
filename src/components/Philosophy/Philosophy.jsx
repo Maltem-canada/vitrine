@@ -52,12 +52,14 @@ export class Philosophy extends Component {
               </div>
             ))
           }
-        </div>
-        <div className="philosophy-last-image">
-          <img
-            alt="Maltem Aldimie fundation"
-            src={`${config.backendURL}${philosophyLastImage.url}`}
-          />
+          <div className="philosophy-last-image philosophy-content-item">
+            <div className="philosophy-content-item-row">
+              <img
+                alt="Maltem Aldimie fundation"
+                src={`${config.backendURL}${philosophyLastImage.url}`}
+              />
+            </div>
+          </div>
         </div>
       </div>
     );

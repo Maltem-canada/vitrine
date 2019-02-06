@@ -74,16 +74,16 @@
     }
   }
   &-last-image {
-    width: 30vw;
-    margin-left: 10vw;
-    margin-bottom: -110px;
-    padding-top: 50px;
+    overflow: visible;
+    margin-bottom: -150px;
+    padding: 0;
+    padding-top: 10px;
     background-color: var(--maltem_yellow);
     display: flex;
     align-items: flex-end;
     img {
       margin-bottom: -1px;
-      margin-left: 50px;
+      margin-left: 50px !important;
       max-width: 100%;
       max-height: 100%;
     }
