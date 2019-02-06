@@ -29,13 +29,24 @@
       }
       &:nth-child(even) {
         margin-left: 10vw;
+        .philosophy-content-item-row {
+          flex-direction: row;
+        }
+        img {
+          margin-left: -20%;
+        }
       }
       &:nth-child(odd) {
         margin-left: 60vw;
+        .philosophy-content-item-row {
+          flex-direction: row-reverse;
+        }
+        img {
+          margin-right: -20%;
+        }
       }
       &-row {
         display: flex;
-        flex-direction: row;
         flex-wrap: nowrap;
         justify-content: flex-start;
         align-items: center;
@@ -50,7 +61,6 @@
       }
       &-image {
         width: 70%;
-        margin-left: -20%;
       }
       &-description {
         text-align: justify;
