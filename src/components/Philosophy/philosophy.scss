@@ -26,6 +26,9 @@
       overflow: hidden;
       &:first-child {
         background-color: var(--maltem_white);
+        .philosophy-content-item-title {
+          margin-top: -150px;
+        }
       }
       &:nth-child(even) {
         margin-left: 10vw;
