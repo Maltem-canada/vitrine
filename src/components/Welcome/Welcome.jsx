@@ -7,19 +7,9 @@ import './welcome.scss';
 import config from '../../config';
 
 export class Welcome extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { display: 'none', margin: '100vh' };
-    this.stopTyping = this.stopTyping.bind(this);
-  }
-
   componentDidMount() {
     const { agglomerateFetch } = this.props;
     agglomerateFetch();
-  }
-
-  stopTyping() {
-    this.setState({ display: '', margin: 0 });
   }
 
   render() {
@@ -33,17 +23,17 @@ export class Welcome extends Component {
       },
     } = this.props;
 
-    const { display, margin } = this.state;
-    const style = { display };
+    const style = {
+      backgroundImage: `url("${config.backendURL + photoWelcome.url}")`,
+    };
 
     return (
       <div className="welcome">
-        <div style={{ marginBottom: margin }}>
+        <div>
           { welcomeSentence
             && (
             <Typist
               className="welcome-typing"
-              onTypingDone={this.stopTyping}
               stdTypingDelay={10}
               avgTypingDelay={10}
               cursor={{ blink: true }}
@@ -53,20 +43,23 @@ export class Welcome extends Component {
             )
           }
         </div>
-        <h1 style={style}>
-          <span className="welcome-red">{titleWhite}</span>
-          &nbsp;
-          <span>{titleRed}</span>
-        </h1>
-        <img
-          style={style}
-          className="welcome-image"
-          src={config.backendURL + photoWelcome.url}
-          alt="Maltem Welcome"
-        />
-        <p style={style}>
-          {titleSub}
-        </p>
+        <div className="welcome-main">
+          <div className="welcome-main-back" style={style} />
+          <div className="welcome-main-front">
+            <div className="welcome-main-front-square">
+              <div className="welcome-main-front-square-left">
+                <div>{titleSub}</div>
+              </div>
+              <div className="welcome-main-front-square-right">
+                <div>
+                  <div>{titleWhite}</div>
+                  <div className="welcome-red">{titleRed}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     );
   }

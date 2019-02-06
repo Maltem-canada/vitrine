@@ -43,7 +43,7 @@ describe('Welcome', () => {
         agglomerate={agglomerate}
       />,
     );
-    expect(wrapper.find('.welcome').children()).to.have.lengthOf(4);
+    expect(wrapper.find('.welcome').children()).to.have.lengthOf(2);
   });
 
   it('test the mapStateToProps function', () => {

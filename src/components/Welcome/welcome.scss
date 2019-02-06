@@ -1,13 +1,4 @@
 .slide-welcome {
-  @keyframes display {
-    from {
-      margin-top: 100vh;
-    }
-    to {
-      margin-top: 50px;
-    }
-  }
-
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
@@ -15,29 +6,76 @@
   align-content: flex-start;
 
   .welcome {
-    padding: 50px;
     font-size: 1.5em;
     &-typing {
+      padding: 50px;
       text-align: left;
       .Cursor {
         color: var(--maltem_red);
       }
     }
+    &-main {
+      &-back {
+        height: 100vh;
+        background-position: -10vw center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        //img {
+        //  height: 100vh;
+        //  margin-left: -10vw;
+        //}
+      }
+      &-front {
+        position: absolute;
+        height: 100vh;
+        margin-top: -100vh;
+        left: 0;
+        right: 0;
+        background-color: var(--maltem_red_transparent);
+        &-square {
+          color: var(--maltem_white);
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: center;
+          align-items: center;
+          align-content: center;
+          height: 100vh;
+          &-left {
+            border-left: 2vw solid var(--maltem_white);
+            border-top: 2vw solid var(--maltem_white);
+            border-bottom: 2vw solid var(--maltem_white);
+            height: 30vw;
+            width: 15vw;
+            > div {
+              font-size: 2vw;
+              position: absolute;
+              margin-top: 27vw;
+              margin-left: 7vw;
+            }
+          }
+          &-right {
+            border-right: 2vw solid var(--maltem_red);
+            border-top: 2vw solid var(--maltem_red);
+            border-bottom: 2vw solid var(--maltem_red);
+            height: 30vw;
+            width: 15vw;
+            > div {
+              text-align: center;
+              position: absolute;
+              padding: 1vw;
+              font-family: MaltemSecondFont;
+              font-size: 4vw;
+              margin-left: 9vw;
+              margin-top: 9vw;
+              background-color: #DF6A77;
+            }
+          }
+        }
+      }
+    }
     &-red {
       color: var(--maltem_red);
-    }
-    text-align: center;
-    h1 {
-      font-family: MaltemSecondFont;
-      animation: display 2s;
-      font-size: 3em;
-    }
-    &-image {
-      max-width: 80vw;
-      max-height: 80vh;
-    }
-    p {
-      margin-top: 0;
     }
   }
 }
