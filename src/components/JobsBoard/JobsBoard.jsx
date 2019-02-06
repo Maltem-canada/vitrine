@@ -52,6 +52,8 @@ export class JobsBoard extends Component {
         dataLength: jobs.length,
         maxDisplay: 4,
       }),
+      autoplaySpeed: 5000,
+      speed: 1000,
     });
 
     const style = {

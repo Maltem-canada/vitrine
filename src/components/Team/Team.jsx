@@ -29,6 +29,9 @@ export class Team extends Component {
         dataLength: teammembers.length,
         maxDisplay: 4,
       }),
+      autoplaySpeed: 0,
+      slidesToScroll: 1,
+      speed: 4000,
     });
 
     const shuffleArray = arr => arr
