@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Typist from 'react-typist';
 import { agglomerateFetchData } from '../../actions/agglomerate';
-import './welcome.scss';
 import config from '../../config';
+import 'react-typist/dist/Typist.css';
+import './welcome.scss';
 
 export class Welcome extends Component {
   componentDidMount() {
@@ -36,7 +37,11 @@ export class Welcome extends Component {
               className="welcome-typing"
               stdTypingDelay={10}
               avgTypingDelay={10}
-              cursor={{ blink: true }}
+              cursor={{
+                show: true,
+                blink: true,
+                element: '|',
+              }}
             >
               {welcomeSentence}
             </Typist>
