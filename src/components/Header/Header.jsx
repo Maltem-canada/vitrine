@@ -105,8 +105,8 @@ export class Header extends Component {
           <a onClick={this.headerClicked} href="#services">{headerServiceTitle}</a>
           <a onClick={this.headerClicked} href="#philosophy">{headerPhilosophyTitle}</a>
           <a onClick={this.headerClicked} href="#team">{headerTeamTitle}</a>
-          <a onClick={this.headerClicked} href="#jobs-board">{headerJobsTitle}</a>
           <a onClick={this.headerClicked} href="#group">{headerGroupTitle}</a>
+          <a onClick={this.headerClicked} href="#jobs-board">{headerJobsTitle}</a>
           <a onClick={this.headerClicked} href="#contact">{headerContactTitle}</a>
         </div>
         <div className="header-scroll">
