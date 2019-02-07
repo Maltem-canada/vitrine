@@ -1,12 +1,32 @@
 @keyframes fixed {
   from {
     opacity: 0;
+    margin-top: -200px;
   }
   to {
     opacity: 1;
+    margin-top: 0;
+  }
+}
+@keyframes notfixed {
+  from {
+    opacity: 1;
+    margin-top: 0;
+  }
+  to {
+    opacity: 0;
+    margin-top: -200px;
   }
 }
 
+.header:not(.header-fixed) {
+  background-color: transparent;
+  .header-content {
+    > :not(:first-child) {
+      display: none;
+    }
+  }
+}
 .header {
   font-size: .8em;
   z-index: 9;
@@ -109,6 +129,9 @@
       background-color: var(--maltem_white);
       z-index: 9999;
       padding: 70px 70px 70px 30px;
+      > * {
+        display: block !important;
+      }
     }
   }
 }

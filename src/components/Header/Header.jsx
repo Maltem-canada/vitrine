@@ -29,6 +29,7 @@ export class Header extends Component {
   }
 
   componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
     window.removeEventListener('mousedown', this.handleClickOutside);
   }
 
@@ -60,8 +61,13 @@ export class Header extends Component {
         displayHeader,
       },
     } = this;
-    console.log(wrapperRef);
-    if (wrapperRef && !wrapperRef.contains(event.target) && displayHeader === 'show') {
+    const isMenuHandler = event.target.className.constructor.name === 'SVGAnimatedString';
+    if (
+      wrapperRef
+      && !wrapperRef.contains(event.target)
+      && displayHeader === 'show'
+      && !isMenuHandler
+    ) {
       this.setState({
         displayHeader: 'hide',
       });

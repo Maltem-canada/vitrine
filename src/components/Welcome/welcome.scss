@@ -10,6 +10,7 @@
     &-typing {
       padding: 50px;
       text-align: left;
+      margin-bottom: 100px;
       .Cursor {
         color: var(--maltem_red);
       }
@@ -20,10 +21,6 @@
         background-position: -10vw center;
         background-repeat: no-repeat;
         background-size: contain;
-        //img {
-        //  height: 100vh;
-        //  margin-left: -10vw;
-        //}
       }
       &-front {
         position: absolute;

@@ -38,9 +38,7 @@ describe('Header', () => {
       headerContactTitle: '',
     };
     global.window = {
-      addEventListener: (action, fct) => {
-        fct();
-      },
+      addEventListener: () => {},
       removeEventListener: removeEventListenerStub,
       scrollY: 0,
       innerHeight: 10,
@@ -82,7 +80,7 @@ describe('Header', () => {
     wrapper.unmount();
     expect( // eslint-disable-line no-unused-expressions
       removeEventListenerStub,
-    ).to.have.been.calledOnce;
+    ).to.have.been.calledTwice;
   });
 
   it('test the mapStateToProps function', () => {
