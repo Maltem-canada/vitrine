@@ -50,7 +50,7 @@ export default class App extends Component {
         <SlideComponent className="slide-services" id="services">
           <ServiceComp />
         </SlideComponent>
-        <SlideComponent className="slide-philosophy" id="philosophy">
+        <SlideComponent className="slide-philosophy">
           <PhilosophyComp />
         </SlideComponent>
         <SlideComponent className="slide-team" id="team">

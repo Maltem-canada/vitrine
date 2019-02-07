@@ -1,6 +1,6 @@
 :root {
   --maltem_red: rgb(209, 42, 60);
-  --maltem_red_transparent: rgba(209, 42, 60, .7);
+  --maltem_red_transparent: rgba(209, 42, 60, .6);
   --maltem_black: rgb(17, 17, 17);
   --maltem_white: #FFFFFF;
   --maltem_grey: #E8E8E8;
@@ -70,6 +70,7 @@ h1 {
   text-align: center;
   font-size: 2em;
   font-family: MaltemSecondFont;
+  margin-top: 0;
 }
 
 img {

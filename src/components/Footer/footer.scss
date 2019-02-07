@@ -1,8 +1,8 @@
 .footer {
+  padding-top: 30px;
   font-size: .7em;
   color: #EEEEEE;
   background-color: var(--maltem_black);
-  min-height: 40vh;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -38,5 +38,17 @@
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #6a6a6a;
+  }
+  &-copyright {
+    margin-top: 20px;
+    background-color: black;
+    padding: 16px;
+    text-align: center;
+    color: var(--maltem_grey);
+    font-size: .8em;
+    display: block !important;
+    a {
+      text-decoration: underline;
+    }
   }
 }

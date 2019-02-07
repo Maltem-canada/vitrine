@@ -7,12 +7,19 @@
 
   .welcome {
     font-size: 1.5em;
-    &-typing {
-      padding: 50px;
-      text-align: left;
-      margin-bottom: 100px;
-      .Cursor {
-        color: var(--maltem_red);
+    &-container {
+      &-typing {
+        padding: 50px;
+        text-align: left;
+        margin-bottom: 60px;
+        .Cursor {
+          color: var(--maltem_red);
+        }
+        .square-cursor {
+          height: .7em;
+          width: 18px;
+          background-color: var(--maltem_red);
+        }
       }
     }
     &-main {
@@ -65,7 +72,7 @@
               font-size: 4vw;
               margin-left: 9vw;
               margin-top: 9vw;
-              background-color: #DF6A77;
+              background-color: #E47F8B;
             }
           }
         }

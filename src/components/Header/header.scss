@@ -57,15 +57,15 @@
   }
   &-scroll {
     width: 100%;
-    height: 4px;
+    height: 5px;
     background: transparent;
     &-indicator {
       background-color: var(--maltem_red);
-      height: 4px;
+      height: 5px;
     }
   }
   &-logo {
-    height: 70px;
+    height: 40px;
     margin-top: 6px;
   }
   a {

@@ -22,7 +22,7 @@
     &-item {
       width: 30vw;
       margin-top: -150px;
-      padding: 50px 20px;
+      padding: 0 20px;
       overflow: hidden;
       &:first-child {
         background-color: var(--maltem_white);
@@ -41,11 +41,8 @@
       }
       &:nth-child(odd) {
         margin-left: 60vw;
-        .philosophy-content-item-row {
-          flex-direction: row-reverse;
-        }
         img {
-          margin-right: -20%;
+          margin-left: -20%;
         }
       }
       &-row {
@@ -63,10 +60,11 @@
         }
       }
       &-image {
-        width: 70%;
+        width: 80%;
       }
       &-description {
         text-align: justify;
+        margin-top: -30px;
       }
     }
     &-item:not(:first-child) {

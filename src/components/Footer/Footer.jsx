@@ -42,6 +42,11 @@ export class Footer extends Component {
             <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
           </div>
         </div>
+        <div className="footer-copyright">
+          Designed by Maltem in Montreal. Check out
+          <a rel="noopener noreferrer" target="_blank" href="https://github.com/orgs/Maltem-canada">GitHub</a>
+          .
+        </div>
       </div>
     );
   }

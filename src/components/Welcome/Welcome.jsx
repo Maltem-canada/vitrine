@@ -30,17 +30,17 @@ export class Welcome extends Component {
 
     return (
       <div className="welcome">
-        <div>
+        <div className="welcome-container">
           { welcomeSentence
             && (
             <Typist
-              className="welcome-typing"
+              className="welcome-container-typing"
               stdTypingDelay={10}
               avgTypingDelay={10}
               cursor={{
                 show: true,
                 blink: true,
-                element: '|',
+                element: <div className="square-cursor" />,
               }}
             >
               {welcomeSentence}
