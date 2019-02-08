@@ -28,8 +28,11 @@ export class Philosophy extends Component {
 
     return (
       <div className="philosophy">
-        <div className="philosophy-header" style={style} id="philosophy">
-          <h1 className="philosophy-header-title decorate-title">{philosophyTitle}</h1>
+        <div className="philosophy-header" style={style}>
+          <div className="philosophy-header-anchor" id="philosophy" />
+          <h1 className="philosophy-header-title decorate-title">
+            {philosophyTitle}
+          </h1>
         </div>
         <div className="philosophy-content">
           {

@@ -11,6 +11,9 @@
       color: var(--maltem_white);
       text-align: left;
     }
+    &-anchor {
+      margin-bottom: 10vw;
+    }
   }
   &-content {
     display: flex;
@@ -50,10 +53,10 @@
       &-title {
         z-index: 8;
         font-size: 5vw;
+        width: 15vw;
         &-red {
           color: var(--maltem_red);
         }
-        width: 15vw;
       }
       &-image {
         width: 25vw;
