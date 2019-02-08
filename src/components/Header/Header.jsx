@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGripLines } from '@fortawesome/free-solid-svg-icons';
 import { agglomerateFetchData } from '../../actions/agglomerate';
-import MaltemLogo from '../../assets/img/maltem-logo.png';
+import config from '../../config';
 import './header.scss';
 
 export class Header extends Component {
@@ -84,6 +84,7 @@ export class Header extends Component {
         headerJobsTitle,
         headerGroupTitle,
         headerContactTitle,
+        maltemLogo,
       },
     } = this.props;
     const {
@@ -99,7 +100,7 @@ export class Header extends Component {
       <nav className={`header ${headerClass}`}>
         <div className={`header-content ${displayHeader}`} ref={this.setWrapperRef}>
           <a onClick={this.headerClicked} href="#welcome">
-            <img className="header-logo" src={MaltemLogo} alt="Maltem logo" />
+            <img className="header-logo" src={config.backendURL + maltemLogo.url} alt="Maltem logo" />
           </a>
           <a onClick={this.headerClicked} href="#expertise">{headerExpertiseTitle}</a>
           <a onClick={this.headerClicked} href="#services">{headerServiceTitle}</a>

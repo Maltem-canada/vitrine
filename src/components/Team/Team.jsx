@@ -7,7 +7,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import { agglomerateFetchData } from '../../actions/agglomerate';
 import config from '../../config';
 import { getSlideShowSettings, getSlideShowLength } from '../../utils/slideShow';
-import profilePlaceholder from '../../assets/img/profile-placeholder.png';
 import './team.scss';
 
 export class Team extends Component {
@@ -21,6 +20,7 @@ export class Team extends Component {
       agglomerate: {
         teammembers,
         teamTitle,
+        teamProfilePlaceholder,
       },
     } = this.props;
 
@@ -39,7 +39,10 @@ export class Team extends Component {
       .sort((a, b) => a[0] - b[0])
       .map(a => a[1]);
 
-    const getMemberPhoto = ({ photo }) => ((photo && photo.url) ? `${config.backendURL}${photo.url}` : profilePlaceholder);
+    const getMemberPhoto = ({ photo }) => (
+      (photo && photo.url)
+        ? `${config.backendURL}${photo.url}`
+        : config.backendURL + teamProfilePlaceholder.url);
 
     return (
       <div className="team">

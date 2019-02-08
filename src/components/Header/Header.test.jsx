@@ -36,6 +36,7 @@ describe('Header', () => {
       headerJobsTitle: '',
       headerGroupTitle: '',
       headerContactTitle: '',
+      maltemLogo: {},
     };
     global.window = {
       addEventListener: () => {},

@@ -15,6 +15,8 @@ export const initialState = {
   philosophies: [],
   teammembers: [],
   locationImage: {},
+  maltemLogo: {},
+  cursor: {},
   isLoading: false,
   hasErrored: false,
   hasLoaded: false,
