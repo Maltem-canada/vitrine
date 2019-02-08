@@ -91,7 +91,7 @@ img {
     display: block;
     height: 5px;
     position: relative;
-    width: 100px;
+    width: 5vw;
     margin-top: 10px;
   }
   &-right {
@@ -100,8 +100,8 @@ img {
       content: "";
       display: block;
       height: 5px;
-      width: 60%;
-      margin-left: 40%;
+      width: 5vw;
+      margin-left: 50%;
       margin-top: 10px;
     }
   }

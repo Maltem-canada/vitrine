@@ -19,6 +19,7 @@ export class Footer extends Component {
         address4,
         phoneNumber,
         email,
+        footerClosure,
       },
     } = this.props;
 
@@ -42,8 +43,11 @@ export class Footer extends Component {
             <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
           </div>
         </div>
-        <div className="footer-copyright">
-          Designed by Maltem in Montreal. Check out
+        <div className="footer-closure">
+          {footerClosure}
+          { ' ' }
+          -
+          { ' ' }
           <a rel="noopener noreferrer" target="_blank" href="https://github.com/orgs/Maltem-canada">GitHub</a>
           .
         </div>

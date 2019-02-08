@@ -42,7 +42,7 @@ describe('Footer', () => {
         agglomerate={agglomerate}
       />,
     );
-    expect(wrapper.find('.footer > div').children()).to.have.lengthOf(5);
+    expect(wrapper.find('.footer > div').children()).to.have.lengthOf(7);
   });
 
   it('test the mapStateToProps function', () => {
