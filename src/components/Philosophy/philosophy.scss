@@ -1,7 +1,7 @@
 .philosophy {
   background-color: var(--maltem_grey);
   &-header {
-    padding: 50px;
+    padding: 2vw;
     height: 80vh;
     display: flex;
     flex-direction: column;
@@ -21,13 +21,14 @@
     align-content: flex-start;
     &-item {
       width: 30vw;
-      margin-top: -150px;
-      padding: 0 20px;
+      margin-top: -10vw;
+      padding: 0 2vw;
       overflow: hidden;
+      min-height: 30vw;
       &:first-child {
         background-color: var(--maltem_white);
         .philosophy-content-item-title {
-          margin-top: -150px;
+          margin-top: -10vw;
         }
       }
       &:nth-child(even) {
@@ -35,15 +36,9 @@
         .philosophy-content-item-row {
           flex-direction: row;
         }
-        img {
-          margin-left: -20%;
-        }
       }
       &:nth-child(odd) {
         margin-left: 60vw;
-        img {
-          margin-left: -20%;
-        }
       }
       &-row {
         display: flex;
@@ -54,36 +49,40 @@
       }
       &-title {
         z-index: 8;
-        font-size: 3em;
+        font-size: 5vw;
         &-red {
           color: var(--maltem_red);
         }
+        width: 15vw;
       }
       &-image {
-        width: 80%;
+        width: 25vw;
+        margin-left: -10vw;
       }
       &-description {
         text-align: justify;
-        margin-top: -30px;
+        font-size: 2vw;
+        margin-top: -2vw;
+        padding-bottom: 1vw;
       }
     }
     &-item:not(:first-child) {
-      margin-top: -250px;
+      margin-top: -15vw;
     }
   }
   &-last-image {
     overflow: visible;
-    margin-bottom: -100px;
+    margin-bottom: -10vw;
+    height: 30vw;
     padding: 0;
-    padding-top: 10px;
+    padding-top: 1vw;
     background-color: var(--maltem_yellow);
     display: flex;
     align-items: flex-end;
     img {
       margin-bottom: -1px;
-      margin-left: 50px !important;
-      max-width: 100%;
-      max-height: 100%;
+      margin-left: 5vw !important;
+      width: 30vw;
     }
   }
 }
