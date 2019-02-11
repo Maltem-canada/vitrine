@@ -101,7 +101,6 @@
         margin-top: -100vh;
         left: 0;
         right: 0;
-        background-color: var(--maltem_red_transparent);
         &-square {
           color: var(--maltem_white);
           display: flex;
@@ -111,11 +110,19 @@
           align-items: center;
           align-content: center;
           height: 100vh;
+          &-background {
+            position: absolute;
+            background-color: var(--maltem_red_transparent);
+            height: 100vh;
+            width: 100vw;
+            z-index: 0;
+          }
           &-left {
             border: 0;
             height: 30vw;
             width: 15vw;
             overflow: hidden;
+            z-index: 1;
             > div {
               border-left: 2vw solid var(--maltem_white);
               border-top: 2vw solid var(--maltem_white);
@@ -141,16 +148,38 @@
             height: 30vw;
             width: 15vw;
             overflow: hidden;
-            > div {
-              border-right: 2vw solid var(--maltem_red);
-              border-top: 2vw solid var(--maltem_red);
-              border-bottom: 2vw solid var(--maltem_red);
-              animation-name: borderRadiusRightAnim;
-              animation-duration: 10s;
-              animation-iteration-count: infinite;
-              height: 26vw;
-              width: 26vw;
-              margin-left: -13vw;
+            z-index: 1;
+            &-top {
+              height: 10vw;
+              overflow: hidden;
+              > div {
+                border-right: 2vw solid var(--maltem_red);
+                border-top: 2vw solid var(--maltem_red);
+                border-bottom: 2vw solid var(--maltem_red);
+                animation-name: borderRadiusRightAnim;
+                animation-duration: 10s;
+                animation-iteration-count: infinite;
+                height: 26vw;
+                width: 26vw;
+                margin-left: -13vw;
+              }
+            }
+            &-bottom {
+              margin-top: 9vw;
+              height: 11vw;
+              overflow: hidden;
+              > div {
+                border-right: 2vw solid var(--maltem_red);
+                border-top: 2vw solid var(--maltem_red);
+                border-bottom: 2vw solid var(--maltem_red);
+                animation-name: borderRadiusRightAnim;
+                animation-duration: 10s;
+                animation-iteration-count: infinite;
+                height: 26vw;
+                width: 26vw;
+                margin-left: -13vw;
+                margin-top: -19vw;
+              }
             }
             &-title {
               text-align: center;
@@ -160,7 +189,7 @@
               font-size: 4vw;
               margin-left: 20vw;
               margin-top: 7vw;
-              background-color: #E48791;
+              //background-color: #E48791;
             }
           }
         }

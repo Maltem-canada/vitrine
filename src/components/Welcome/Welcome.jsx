@@ -55,17 +55,23 @@ export class Welcome extends Component {
           </div>
           <div className="welcome-main-front">
             <div className="welcome-main-front-square">
+              <div className="welcome-main-front-square-background" />
               <div className="welcome-main-front-square-left">
                 <div>
                   <div className="welcome-main-front-square-left-title">{titleSub}</div>
                 </div>
               </div>
               <div className="welcome-main-front-square-right">
-                <div>
-                  <div className="welcome-main-front-square-right-title">
-                    <div>{titleWhite}</div>
-                    <div className="welcome-red">{titleRed}</div>
+                <div className="welcome-main-front-square-right-top">
+                  <div>
+                    <div className="welcome-main-front-square-right-title">
+                      <div>{titleWhite}</div>
+                      <div className="welcome-red">{titleRed}</div>
+                    </div>
                   </div>
+                </div>
+                <div className="welcome-main-front-square-right-bottom">
+                  <div />
                 </div>
               </div>
             </div>
