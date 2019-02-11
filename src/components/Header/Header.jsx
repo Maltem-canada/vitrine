@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGripLines } from '@fortawesome/free-solid-svg-icons';
 import { agglomerateFetchData } from '../../actions/agglomerate';
+import { setLanguage } from '../../services/language';
 import config from '../../config';
 import './header.scss';
 
@@ -14,6 +15,7 @@ export class Header extends Component {
     this.handleScroll = this.handleScroll.bind(this);
     this.setWrapperRef = this.setWrapperRef.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
+    this.changeLanguage = this.changeLanguage.bind(this);
     this.state = {
       percentageScroll: 0,
       headerClass: '',
@@ -74,6 +76,13 @@ export class Header extends Component {
     }
   }
 
+  changeLanguage(event) {
+    const lang = event.target.value;
+    setLanguage(lang);
+    const { agglomerateFetch } = this.props;
+    agglomerateFetch();
+  }
+
   render() {
     const {
       agglomerate: {
@@ -86,6 +95,8 @@ export class Header extends Component {
         headerContactTitle,
         maltemLogo,
         cursor32x32,
+        list,
+        languagePlaceholder,
       },
     } = this.props;
     const {
@@ -98,20 +109,33 @@ export class Header extends Component {
     };
 
     document.getElementsByTagName('body')[0].style.cursor = `url(${config.backendURL}${(cursor32x32) ? cursor32x32.url : ''}), auto`;
-
     return (
       <nav className={`header ${headerClass}`}>
         <div className={`header-content ${displayHeader}`} ref={this.setWrapperRef}>
-          <a onClick={this.headerClicked} href="#welcome">
-            <img className="header-logo" src={config.backendURL + maltemLogo.url} alt="Maltem logo" />
-          </a>
-          <a onClick={this.headerClicked} href="#expertise">{headerExpertiseTitle}</a>
-          <a onClick={this.headerClicked} href="#services">{headerServiceTitle}</a>
-          <a onClick={this.headerClicked} href="#philosophy">{headerPhilosophyTitle}</a>
-          <a onClick={this.headerClicked} href="#team">{headerTeamTitle}</a>
-          <a onClick={this.headerClicked} href="#group">{headerGroupTitle}</a>
-          <a onClick={this.headerClicked} href="#jobs-board">{headerJobsTitle}</a>
-          <a onClick={this.headerClicked} href="#contact">{headerContactTitle}</a>
+          <div>
+            <a onClick={this.headerClicked} href="#welcome">
+              <img className="header-logo" src={config.backendURL + maltemLogo.url} alt="Maltem logo" />
+            </a>
+            <a onClick={this.headerClicked} href="#expertise">{headerExpertiseTitle}</a>
+            <a onClick={this.headerClicked} href="#services">{headerServiceTitle}</a>
+            <a onClick={this.headerClicked} href="#philosophy">{headerPhilosophyTitle}</a>
+            <a onClick={this.headerClicked} href="#team">{headerTeamTitle}</a>
+            <a onClick={this.headerClicked} href="#group">{headerGroupTitle}</a>
+            <a onClick={this.headerClicked} href="#jobs-board">{headerJobsTitle}</a>
+            <a onClick={this.headerClicked} href="#contact">{headerContactTitle}</a>
+          </div>
+          <div>
+            <select onChange={this.changeLanguage} value="default">
+              <option value="default" disabled>{languagePlaceholder}</option>
+              {
+                list.map(l => (
+                  <option key={l.language} value={l.language.toLowerCase()}>
+                    {l.name}
+                  </option>
+                ))
+              }
+            </select>
+          </div>
         </div>
         <div className="header-scroll">
           <div className="header-scroll-indicator" style={indicatorStyle} />

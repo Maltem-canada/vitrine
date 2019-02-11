@@ -22,7 +22,7 @@
 .header:not(.header-fixed) {
   background-color: transparent;
   .header-content {
-    > :not(:first-child) {
+    >:first-child >:not(:first-child) {
       display: none;
     }
   }
@@ -37,22 +37,48 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    align-content: space-around;
-    > * {
-      margin-left: 40px;
-      &:hover {
-        color: var(--maltem_red);
-        text-decoration: underline;
+    > div {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      align-content: space-around;
+      > * {
+        margin-left: 20px;
+        margin-right: 20px;
+        &:hover {
+          color: var(--maltem_red);
+          text-decoration: underline;
+        }
+      }
+      :first-child {
+        margin-left: 0;
+        padding-left: 20px;
+      }
+      :last-child {
+        padding-right: 20px;
       }
     }
-    :first-child {
-      margin-left: 0;
-      padding-left: 20px;
-    }
-    :last-child {
-      padding-right: 20px;
+    select {
+      border: 1px solid var(--maltem_grey);
+      font-size: 1em;
+      padding: 10px;
+      &::-ms-expand {
+        display: none;
+      }
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 1px;
+      text-overflow: '';
+      &:focus {
+        outline:none;
+      }
+      option {
+        padding: 10px;
+      }
     }
   }
   &-scroll {
@@ -84,6 +110,14 @@
 }
 
 @media only screen and (max-width : 1000px) {
+  .header:not(.header-fixed) {
+    background-color: transparent;
+    .header-content {
+      >:first-child >:not(:first-child) {
+        display: flex;
+      }
+    }
+  }
   .header {
     margin-bottom: 100px;
     &-logo {
@@ -131,6 +165,9 @@
       padding: 70px 70px 70px 30px;
       > * {
         display: block !important;
+        > * {
+          display: block !important;
+        }
       }
     }
   }

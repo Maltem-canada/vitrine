@@ -20,6 +20,8 @@ export class Footer extends Component {
         phoneNumber,
         email,
         footerClosure,
+        locationTitle,
+        contactTitle,
       },
     } = this.props;
 
@@ -27,7 +29,7 @@ export class Footer extends Component {
       <div className="footer">
         <div>
           <div>
-            <h1 className="footer-title-left decorate-title">LOCATION</h1>
+            <h1 className="footer-title-left decorate-title">{locationTitle.toUpperCase()}</h1>
             {address1}
             <br />
             {address2}
@@ -37,7 +39,7 @@ export class Footer extends Component {
             {address4}
           </div>
           <div className="footer-right" id="contact">
-            <h1 className="footer-title-right decorate-title-right">CONTACT</h1>
+            <h1 className="footer-title-right decorate-title-right">{contactTitle.toUpperCase()}</h1>
             <a href={`mailto:${email}`}>{email}</a>
             <br />
             <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>

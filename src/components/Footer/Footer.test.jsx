@@ -13,7 +13,9 @@ chai.use(sinonChai);
 configure({ adapter: new Adapter() });
 const proxyquire = noCallThru();
 let agglomerate;
-const dispatchSpy = sinon.spy();
+const dispatchStub = sinon.stub();
+const getLanguageStub = sinon.stub();
+const setLanguageStub = sinon.stub();
 
 const {
   mapStateToProps, mapDispatchToProps,
@@ -25,13 +27,21 @@ const {
 
 const { Footer } = proxyquire('./Footer.jsx', {
   '../SocialNetwork/SocialNetwork': '',
+  '../../services/language': {
+    getLanguage: getLanguageStub,
+    setLanguage: setLanguageStub,
+  },
 });
 
 describe('Footer', () => {
   beforeEach(() => {
-    dispatchSpy.resetHistory();
+    dispatchStub.reset();
+    getLanguageStub.reset();
+    setLanguageStub.reset();
     agglomerate = {
       socialnetworks: {},
+      locationTitle: '',
+      contactTitle: '',
     };
   });
 
@@ -55,7 +65,7 @@ describe('Footer', () => {
   });
 
   it('test the mapDispatchToProps function', () => {
-    mapDispatchToProps(dispatchSpy).agglomerateFetch();
-    expect(dispatchSpy).to.have.been.callCount(1);
+    mapDispatchToProps(dispatchStub).agglomerateFetch();
+    expect(dispatchStub).to.have.been.callCount(1);
   });
 });

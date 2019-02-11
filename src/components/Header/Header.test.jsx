@@ -6,7 +6,6 @@ import { describe, it, beforeEach } from 'mocha';
 import sinon from 'sinon';
 import Adapter from 'enzyme-adapter-react-16';
 import sinonChai from 'sinon-chai';
-import { Header } from './Header.jsx';
 
 chai.should();
 chai.use(sinonChai);
@@ -14,8 +13,10 @@ chai.use(sinonChai);
 configure({ adapter: new Adapter() });
 const proxyquire = noCallThru();
 let agglomerate;
-const dispatchSpy = sinon.spy();
+const dispatchStub = sinon.stub();
 const removeEventListenerStub = sinon.stub();
+const getLanguageStub = sinon.stub();
+const setLanguageStub = sinon.stub();
 
 const {
   mapStateToProps, mapDispatchToProps,
@@ -25,9 +26,19 @@ const {
   },
 });
 
+const { Header } = proxyquire('./Header.jsx', {
+  '../../actions/agglomerate': {
+    agglomerateFetchData: () => {},
+  },
+  '../../services/language': {
+    getLanguage: getLanguageStub,
+    setLanguage: setLanguageStub,
+  },
+});
+
 describe('Header', () => {
   beforeEach(() => {
-    dispatchSpy.resetHistory();
+    dispatchStub.resetHistory();
     agglomerate = {
       headerExpertiseTitle: '',
       headerServiceTitle: '',
@@ -38,6 +49,7 @@ describe('Header', () => {
       headerContactTitle: '',
       maltemLogo: {},
       cursor32x32: {},
+      list: [],
     };
     global.window = {
       addEventListener: () => {},
@@ -50,6 +62,9 @@ describe('Header', () => {
       getElementsByTagName: () => [{ style: {} }],
     };
     removeEventListenerStub.reset();
+    getLanguageStub.reset();
+    getLanguageStub.returns('en');
+    setLanguageStub.reset();
   });
 
   it('renders the Header component', () => {
@@ -59,7 +74,7 @@ describe('Header', () => {
         agglomerate={agglomerate}
       />,
     );
-    expect(wrapper.find('.header-content').children()).to.have.lengthOf(8);
+    expect(wrapper.find('.header-content').children().children()).to.have.lengthOf(9);
   });
 
   it('renders the Header component and handleClickOutside', () => {
@@ -73,7 +88,8 @@ describe('Header', () => {
     expect(wrapper.find('.header-content').props().className).to.equal('header-content hide');
     wrapper.instance().headerClicked();
     expect(wrapper.find('.header-content').props().className).to.equal('header-content show');
-    wrapper.find('.header-content').children().first().simulate('click');
+    wrapper.find('.header-content').children().children().first()
+      .simulate('click');
     expect(wrapper.find('.header-content').props().className).to.equal('header-content hide');
     wrapper.instance().headerClicked();
     expect(wrapper.find('.header-content').props().className).to.equal('header-content show');
@@ -96,7 +112,7 @@ describe('Header', () => {
   });
 
   it('test the mapDispatchToProps function', () => {
-    mapDispatchToProps(dispatchSpy).agglomerateFetch();
-    expect(dispatchSpy).to.have.been.callCount(1);
+    mapDispatchToProps(dispatchStub).agglomerateFetch();
+    expect(dispatchStub).to.have.been.callCount(1);
   });
 });

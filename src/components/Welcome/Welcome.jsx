@@ -34,6 +34,7 @@ export class Welcome extends Component {
           { welcomeSentence
             && (
             <Typist
+              key={new Date().getTime()}
               className="welcome-container-typing"
               stdTypingDelay={10}
               avgTypingDelay={10}
