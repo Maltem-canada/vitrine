@@ -1,29 +1,15 @@
-@keyframes borderRadiusLeftAnim {
+@keyframes borderRadiusAnim {
   35% {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    border-radius: 0;
+    border-radius: 0;
   }
   50% {
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
+    border-radius: 50%;
+    border-radius: 50%;
   }
   65% {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-}
-@keyframes borderRadiusRightAnim {
-  35% {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  50% {
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-  }
-  65% {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    border-radius: 0;
+    border-radius: 0;
   }
 }
 @keyframes astronaut {
@@ -127,7 +113,7 @@
               border-left: 2vw solid var(--maltem_white);
               border-top: 2vw solid var(--maltem_white);
               border-bottom: 2vw solid var(--maltem_white);
-              animation-name: borderRadiusLeftAnim;
+              animation-name: borderRadiusAnim;
               animation-duration: 10s;
               animation-iteration-count: infinite;
               height: 26vw;
@@ -156,7 +142,7 @@
                 border-right: 2vw solid var(--maltem_red);
                 border-top: 2vw solid var(--maltem_red);
                 border-bottom: 2vw solid var(--maltem_red);
-                animation-name: borderRadiusRightAnim;
+                animation-name: borderRadiusAnim;
                 animation-duration: 10s;
                 animation-iteration-count: infinite;
                 height: 26vw;
@@ -172,7 +158,7 @@
                 border-right: 2vw solid var(--maltem_red);
                 border-top: 2vw solid var(--maltem_red);
                 border-bottom: 2vw solid var(--maltem_red);
-                animation-name: borderRadiusRightAnim;
+                animation-name: borderRadiusAnim;
                 animation-duration: 10s;
                 animation-iteration-count: infinite;
                 height: 26vw;
