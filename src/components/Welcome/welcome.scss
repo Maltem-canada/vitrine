@@ -52,10 +52,19 @@
   .welcome {
     font-size: 1.5em;
     &-container {
+      margin-bottom: 60px;
+      min-height: 6em;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      align-content: center;
+      padding-left: 3vw;
+      padding-right: 3vw;
       &-typing {
-        padding: 50px;
         text-align: left;
-        margin-bottom: 60px;
+        height: auto;
         .Cursor {
           color: var(--maltem_red);
         }
