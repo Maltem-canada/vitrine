@@ -1,43 +1,27 @@
 @keyframes borderRadiusLeftAnim {
-  0% {
+  35% {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
-  20% {
-    border-top-left-radius: 0%;
-    border-bottom-left-radius: 0%;
-  }
-  25% {
+  50% {
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
   }
-  70% {
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-  }
-  75% {
-    border-top-left-radius: 0%;
-    border-bottom-left-radius: 0%;
+  65% {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }
 @keyframes borderRadiusRightAnim {
-  0% {
+  35% {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
-  20% {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  25% {
+  50% {
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
   }
-  70% {
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-  }
-  75% {
+  65% {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
@@ -61,19 +45,13 @@
   }
 }
 @keyframes textAnim {
-  0% {
+  35% {
     margin-top: 23vw;
   }
-  20% {
-    margin-top: 23vw;
-  }
-  25% {
+  50% {
     margin-top: 20vw;
   }
-  70% {
-    margin-top: 20vw;
-  }
-  75% {
+  65% {
     margin-top: 23vw;
   }
 }
@@ -143,14 +121,14 @@
               border-top: 2vw solid var(--maltem_white);
               border-bottom: 2vw solid var(--maltem_white);
               animation-name: borderRadiusLeftAnim;
-              animation-duration: 20s;
+              animation-duration: 10s;
               animation-iteration-count: infinite;
               height: 26vw;
               width: 26vw;
             }
             &-title {
               animation-name: textAnim;
-              animation-duration: 20s;
+              animation-duration: 10s;
               animation-iteration-count: infinite;
               font-size: 2vw;
               position: absolute;
@@ -168,7 +146,7 @@
               border-top: 2vw solid var(--maltem_red);
               border-bottom: 2vw solid var(--maltem_red);
               animation-name: borderRadiusRightAnim;
-              animation-duration: 20s;
+              animation-duration: 10s;
               animation-iteration-count: infinite;
               height: 26vw;
               width: 26vw;
