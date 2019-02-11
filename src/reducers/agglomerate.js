@@ -16,7 +16,7 @@ export const initialState = {
   teammembers: [],
   locationImage: {},
   maltemLogo: {},
-  cursor: {},
+  cursor32x32: {},
   isLoading: false,
   hasErrored: false,
   hasLoaded: false,

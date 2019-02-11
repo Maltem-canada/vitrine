@@ -85,6 +85,7 @@ export class Header extends Component {
         headerGroupTitle,
         headerContactTitle,
         maltemLogo,
+        cursor32x32,
       },
     } = this.props;
     const {
@@ -95,6 +96,8 @@ export class Header extends Component {
     const indicatorStyle = {
       width: `${percentageScroll}%`,
     };
+
+    document.getElementsByTagName('body')[0].style.cursor = `url(${config.backendURL}${(cursor32x32) ? cursor32x32.url : ''}), auto`;
 
     return (
       <nav className={`header ${headerClass}`}>

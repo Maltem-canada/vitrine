@@ -37,6 +37,7 @@ describe('Header', () => {
       headerGroupTitle: '',
       headerContactTitle: '',
       maltemLogo: {},
+      cursor32x32: {},
     };
     global.window = {
       addEventListener: () => {},
@@ -46,6 +47,7 @@ describe('Header', () => {
     };
     global.document = {
       documentElement: {},
+      getElementsByTagName: () => [{ style: {} }],
     };
     removeEventListenerStub.reset();
   });
