@@ -13,7 +13,9 @@ export default function getGA() {
 
   if (!GA) {
     GA = ReactGA;
-    GA.initialize(config.googleTrackingId);
+    GA.initialize(config.googleTrackingId, {
+      siteSpeedSampleRate: 100,
+    });
   }
 
   return GA;

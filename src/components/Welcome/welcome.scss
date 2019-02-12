@@ -123,14 +123,14 @@
               border-top: 2vw solid var(--maltem_white);
               border-bottom: 2vw solid var(--maltem_white);
               animation-name: borderRadiusAnim;
-              animation-duration: 10s;
+              animation-duration: 5s;
               animation-iteration-count: infinite;
               height: 26vw;
               width: 26vw;
             }
             &-title {
               animation-name: textAnim;
-              animation-duration: 10s;
+              animation-duration: 5s;
               animation-iteration-count: infinite;
               font-size: 2vw;
               position: absolute;
@@ -152,7 +152,7 @@
                 border-top: 2vw solid var(--maltem_red);
                 border-bottom: 2vw solid var(--maltem_red);
                 animation-name: borderRadiusAnim;
-                animation-duration: 10s;
+                animation-duration: 5s;
                 animation-iteration-count: infinite;
                 height: 26vw;
                 width: 26vw;
@@ -168,7 +168,7 @@
                 border-top: 2vw solid var(--maltem_red);
                 border-bottom: 2vw solid var(--maltem_red);
                 animation-name: borderRadiusAnim;
-                animation-duration: 10s;
+                animation-duration: 5s;
                 animation-iteration-count: infinite;
                 height: 26vw;
                 width: 26vw;
