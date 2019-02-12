@@ -90,6 +90,13 @@
           animation-iteration-count: infinite;
         }
       }
+      &-background {
+        position: absolute;
+        background-color: var(--maltem_red_transparent);
+        height: 100vh;
+        width: 100vw;
+        margin-top: -100vh;
+      }
       &-front {
         position: absolute;
         height: 100vh;
@@ -105,19 +112,11 @@
           align-items: center;
           align-content: center;
           height: 100vh;
-          &-background {
-            position: absolute;
-            background-color: var(--maltem_red_transparent);
-            height: 100vh;
-            width: 100vw;
-            z-index: 0;
-          }
           &-left {
             border: 0;
             height: 30vw;
             width: 15vw;
             overflow: hidden;
-            z-index: 1;
             > div {
               border-left: 2vw solid var(--maltem_white);
               border-top: 2vw solid var(--maltem_white);
@@ -143,7 +142,6 @@
             height: 30vw;
             width: 15vw;
             overflow: hidden;
-            z-index: 1;
             &-top {
               height: 10vw;
               overflow: hidden;
@@ -192,6 +190,80 @@
     }
     &-red {
       color: var(--maltem_red);
+    }
+  }
+}
+
+@media only screen and (max-width : 1000px) {
+  @keyframes textAnim {
+    35% {
+      margin-top: 33vw;
+    }
+    50% {
+      margin-top: 30vw;
+    }
+    65% {
+      margin-top: 33vw;
+    }
+  }
+  .slide-welcome {
+    .welcome {
+      &-main {
+        &-back {
+          height: 50vh;
+        }
+        &-background {
+          height: 50vh;
+          margin-top: -50vh;
+        }
+        &-front {
+          height: 50vh;
+          margin-top: -50vh;
+          &-square {
+            height: 50vh;
+            &-left {
+              height: 40vw;
+              width: 20vw;
+              > div {
+                height: 36vw;
+                width: 36vw;
+              }
+              &-title {
+                margin-top: 33vw;
+                margin-left: 9vw;
+              }
+            }
+            &-right {
+              height: 40vw;
+              width: 20vw;
+              &-top {
+                height: 15vw;
+                > div {
+                  height: 26vw;
+                  width: 36vw;
+                  margin-left: -20vw;
+                }
+              }
+              &-bottom {
+                margin-top: 9vw;
+                height: 16vw;
+                > div {
+                  height: 31vw;
+                  width: 36vw;
+                  margin-left: -20vw;
+                  margin-top: -19vw;
+                }
+              }
+              &-title {
+                padding: 1vw;
+                font-size: 4vw;
+                margin-left: 30vw;
+                margin-top: 12vw;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

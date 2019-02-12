@@ -53,9 +53,9 @@ export class Welcome extends Component {
           <div className="welcome-main-back">
             <div className="welcome-main-back-astro" style={style} />
           </div>
+          <div className="welcome-main-background" />
           <div className="welcome-main-front">
             <div className="welcome-main-front-square">
-              <div className="welcome-main-front-square-background" />
               <div className="welcome-main-front-square-left">
                 <div>
                   <div className="welcome-main-front-square-left-title">{titleSub}</div>
