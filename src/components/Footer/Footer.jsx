@@ -2,9 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { agglomerateFetchData } from '../../actions/agglomerate';
+import getGA from '../../services/googleAnalytics';
 import './footer.scss';
 
 export class Footer extends Component {
+  static handleClick(target) {
+    getGA().event({
+      category: 'User',
+      action: 'Click Footer',
+      label: target,
+    });
+  }
+
   componentDidMount() {
     const { agglomerateFetch } = this.props;
     agglomerateFetch();
@@ -40,9 +49,9 @@ export class Footer extends Component {
           </div>
           <div className="footer-right" id="contact">
             <h1 className="footer-title-right decorate-title-right">{contactTitle.toUpperCase()}</h1>
-            <a href={`mailto:${email}`}>{email}</a>
+            <a onClick={() => Footer.handleClick('Email')} href={`mailto:${email}`}>{email}</a>
             <br />
-            <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
+            <a onClick={() => Footer.handleClick('Phone number')} href={`tel:${phoneNumber}`}>{phoneNumber}</a>
           </div>
         </div>
         <div className="footer-closure">
@@ -50,7 +59,7 @@ export class Footer extends Component {
           { ' ' }
           -
           { ' ' }
-          <a rel="noopener noreferrer" target="_blank" href="https://github.com/orgs/Maltem-canada">GitHub</a>
+          <a onClick={() => Footer.handleClick('GitHub')} rel="noopener noreferrer" target="_blank" href="https://github.com/orgs/Maltem-canada">GitHub</a>
           .
         </div>
       </div>

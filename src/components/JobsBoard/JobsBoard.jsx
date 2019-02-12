@@ -10,8 +10,14 @@ import { agglomerateFetchData } from '../../actions/agglomerate';
 import './jobs-board.scss';
 import config from '../../config';
 import { getSlideShowLength, getSlideShowSettings } from '../../utils/slideShow';
+import getGA from '../../services/googleAnalytics';
 
 export class JobsBoard extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   componentDidMount() {
     const { agglomerateFetch } = this.props;
     agglomerateFetch();
@@ -37,6 +43,16 @@ export class JobsBoard extends Component {
     );
   }
 
+  handleClick(content) {
+    const { togglePopup } = this.props;
+    togglePopup(true, this.getPopupContent(content));
+    getGA().event({
+      category: 'User',
+      action: 'Click Job',
+      label: content.name,
+    });
+  }
+
   render() {
     const {
       agglomerate: {
@@ -44,7 +60,6 @@ export class JobsBoard extends Component {
         jobs,
         photoJobsBoard,
       },
-      togglePopup,
     } = this.props;
 
     const settings = getSlideShowSettings({
@@ -70,8 +85,8 @@ export class JobsBoard extends Component {
                 key={job.id}
                 type="submit"
                 className="jobs-list-item"
-                onClick={() => togglePopup(true, this.getPopupContent(job))}
-                onKeyPress={() => togglePopup(true, this.getPopupContent(job))}
+                onClick={() => this.handleClick(job)}
+                onKeyPress={() => this.handleClick(job)}
               >
                 <div>{job.name}</div>
               </button>

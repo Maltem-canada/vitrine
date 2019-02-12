@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGripLines } from '@fortawesome/free-solid-svg-icons';
 import { agglomerateFetchData } from '../../actions/agglomerate';
 import { setLanguage } from '../../services/language';
+import getGA from '../../services/googleAnalytics';
 import config from '../../config';
 import './header.scss';
 
@@ -49,10 +50,15 @@ export class Header extends Component {
     });
   }
 
-  headerClicked() {
+  headerClicked(target) {
     const { displayHeader } = this.state;
     this.setState({
       displayHeader: (displayHeader === 'hide') ? 'show' : 'hide',
+    });
+    getGA().event({
+      category: 'User',
+      action: 'Click Header',
+      label: target,
     });
   }
 
@@ -81,6 +87,11 @@ export class Header extends Component {
     setLanguage(lang);
     const { agglomerateFetch } = this.props;
     agglomerateFetch();
+    getGA().event({
+      category: 'User',
+      action: 'Change Language',
+      label: lang,
+    });
   }
 
   render() {
@@ -113,16 +124,16 @@ export class Header extends Component {
       <nav className={`header ${headerClass}`}>
         <div className={`header-content ${displayHeader}`} ref={this.setWrapperRef}>
           <div>
-            <a onClick={this.headerClicked} href="#welcome">
+            <a onClick={() => this.headerClicked('Logo')} href="#welcome">
               <img className="header-logo" src={config.backendURL + maltemLogo.url} alt="Maltem logo" />
             </a>
-            <a onClick={this.headerClicked} href="#expertise">{headerExpertiseTitle}</a>
-            <a onClick={this.headerClicked} href="#services">{headerServiceTitle}</a>
-            <a onClick={this.headerClicked} href="#philosophy">{headerPhilosophyTitle}</a>
-            <a onClick={this.headerClicked} href="#team">{headerTeamTitle}</a>
-            <a onClick={this.headerClicked} href="#group">{headerGroupTitle}</a>
-            <a onClick={this.headerClicked} href="#jobs-board">{headerJobsTitle}</a>
-            <a onClick={this.headerClicked} href="#contact">{headerContactTitle}</a>
+            <a onClick={() => this.headerClicked('Expertise')} href="#expertise">{headerExpertiseTitle}</a>
+            <a onClick={() => this.headerClicked('Services')} href="#services">{headerServiceTitle}</a>
+            <a onClick={() => this.headerClicked('Philosophy')} href="#philosophy">{headerPhilosophyTitle}</a>
+            <a onClick={() => this.headerClicked('Team')} href="#team">{headerTeamTitle}</a>
+            <a onClick={() => this.headerClicked('Group')} href="#group">{headerGroupTitle}</a>
+            <a onClick={() => this.headerClicked('Jobs')} href="#jobs-board">{headerJobsTitle}</a>
+            <a onClick={() => this.headerClicked('Contact')} href="#contact">{headerContactTitle}</a>
           </div>
           <div>
             <select onChange={this.changeLanguage} value="default">
