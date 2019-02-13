@@ -6,6 +6,7 @@ import {
 } from '../constants/action-types';
 import getAgglomeratedData from '../services/backend';
 import { getLanguage } from '../services/language';
+import getGA from '../services/googleAnalytics';
 
 export function agglomerateHasErrored(bool) {
   return {
@@ -63,6 +64,7 @@ export function agglomerateFetchData() {
     }
 
     dispatch(agglomerateIsLoading(true));
+    const start = new Date().getTime();
     return getAgglomeratedData()
       .then((res) => {
         dispatch(agglomerateListFetchDataSuccess(res.data));
@@ -72,6 +74,13 @@ export function agglomerateFetchData() {
           ...agglo,
           list: res.data,
         }));
+        const end = new Date().getTime();
+        const time = end - start;
+        getGA().timing({
+          category: 'Timing',
+          variable: 'Backend Load',
+          value: time,
+        });
         return {
           ...res.data,
           list: res.data,

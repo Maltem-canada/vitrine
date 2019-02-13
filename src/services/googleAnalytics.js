@@ -7,7 +7,8 @@ export default function getGA() {
   if (!config.isProd) {
     return {
       event: (data) => { console.log('event: ', data); },
-      pageview: (pathname) => { console.log('pageview: ', pathname); },
+      pageview: (data) => { console.log('pageview: ', data); },
+      timing: (data) => { console.log('timing: ', data); },
     };
   }
 
