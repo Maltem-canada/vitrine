@@ -1,63 +1,65 @@
-.team {
-  margin-top: 200px;
-  margin-bottom: 75px;
-  padding: 5vw;
-  &-title {
-    text-align: left;
-    margin-bottom: 50px;
-  }
-  &-list {
-    &-member {
-      &:focus {
-        outline-width: 0;
-      }
-      &:hover {
-        .team-list-member-description {
-          visibility: visible;
-          opacity: .9999;
-          transition-delay: 0s;
-          background-color: rgba(255, 255, 255, .8);
+.slide-team {
+  .team {
+    margin-top: 200px;
+    margin-bottom: 75px;
+    padding: 5vw;
+    &-title {
+      text-align: left;
+      margin-bottom: 50px;
+    }
+    &-list {
+      &-member {
+        &:focus {
+          outline-width: 0;
         }
-      }
-      &-description {
-        font-size: 2vw;
-        overflow: hidden;
-        margin-top: -15.5vw;
-        margin-left: .5vw;
-        margin-bottom: .5vw;
-        text-align: center;
-        height: 15vw;
-        width: 15vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        border-radius: 50%;
-        transition: visibility 0s linear 0.33s, opacity 0.33s linear;
-        opacity: 0;
-        visibility: hidden;
-        background: var(--maltem_white);
-        > * {
-          margin-left: 2vw;
-          margin-right: 2vw;
+        &:hover {
+          .team-list-member-description {
+            visibility: visible;
+            opacity: .9999;
+            transition-delay: 0s;
+            background-color: rgba(255, 255, 255, .8);
+          }
         }
-        &-position {
-          font-size: .7em;
+        &-description {
+          font-size: 2vw;
+          overflow: hidden;
+          margin-top: -15.5vw;
+          margin-left: .5vw;
+          margin-bottom: .5vw;
+          text-align: center;
+          height: 15vw;
+          width: 15vw;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          border-radius: 50%;
+          transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+          opacity: 0;
+          visibility: hidden;
+          background: var(--maltem_white);
+          > * {
+            margin-left: 2vw;
+            margin-right: 2vw;
+          }
+          &-position {
+            font-size: .7em;
+          }
         }
-      }
-      img {
-        height: 16vw;
-        width: 16vw;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        border-radius: 50%;
+        img {
+          height: 16vw;
+          width: 16vw;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+        }
       }
     }
-  }
-  .slick-dots {
-    bottom: -70px;
-    li button:before, li.slick-active button:before {
-      color: var(--maltem_red);
-      font-size: 15px;
+    .slick-dots {
+      bottom: -70px;
+      li button:before, li.slick-active button:before {
+        color: var(--maltem_red);
+        font-size: 15px;
+      }
     }
   }
 }

@@ -7,6 +7,7 @@ import ServiceComp from './Service/Service';
 import PhilosophyComp from './Philosophy/Philosophy';
 import TeamComp from './Team/Team';
 import LocationComp from './Location/Location';
+import LibraryComp from './Library/Library';
 
 export default class App extends Component {
   constructor(props) {
@@ -55,6 +56,9 @@ export default class App extends Component {
         </SlideComponent>
         <SlideComponent className="slide-team" id="team">
           <TeamComp />
+        </SlideComponent>
+        <SlideComponent className="slide-library" id="library">
+          <LibraryComp />
         </SlideComponent>
         <SlideComponent className="slide-group" id="group">
           <LocationComp />

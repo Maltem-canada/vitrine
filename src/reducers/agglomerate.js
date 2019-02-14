@@ -25,6 +25,7 @@ export const initialState = {
   locationTitle: '',
   contactTitle: '',
   languagePlaceholder: '',
+  library: [],
 };
 const initialSateList = {
   list: [],

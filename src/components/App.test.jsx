@@ -32,7 +32,7 @@ describe('App', () => {
 
   it('renders the App component', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.find('#app-content').children()).to.have.lengthOf(8);
+    expect(wrapper.find('#app-content').children()).to.have.lengthOf(9);
   });
 
   it('renders the App component and display the popup', () => {
