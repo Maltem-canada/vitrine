@@ -22,7 +22,7 @@ const App = proxyquire('./App.jsx', {
   './Service/Service': '',
   './Philosophy/Philosophy': '',
   './Team/Team': '',
-  './Location/Location': '',
+  './Group/Group': '',
 }).default;
 
 describe('App', () => {

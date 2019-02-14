@@ -6,7 +6,7 @@ import ExpertiseComp from './Expertise/Expertise';
 import ServiceComp from './Service/Service';
 import PhilosophyComp from './Philosophy/Philosophy';
 import TeamComp from './Team/Team';
-import LocationComp from './Location/Location';
+import GroupComp from './Group/Group';
 import LibraryComp from './Library/Library';
 
 export default class App extends Component {
@@ -61,7 +61,7 @@ export default class App extends Component {
           <LibraryComp />
         </SlideComponent>
         <SlideComponent className="slide-group" id="group">
-          <LocationComp />
+          <GroupComp />
         </SlideComponent>
         <SlideComponent className="slide-jobs" id="jobs-board">
           <JobsBoardComp

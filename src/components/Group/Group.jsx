@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { agglomerateFetchData } from '../../actions/agglomerate';
-import './location.scss';
 import config from '../../config';
+import './group.scss';
 
-export class Location extends Component {
+export class Group extends Component {
   componentDidMount() {
     const { agglomerateFetch } = this.props;
     agglomerateFetch();
@@ -19,14 +19,14 @@ export class Location extends Component {
     } = this.props;
 
     return (
-      <div className="location">
+      <div className="group">
         <img alt="Maltem group locations" src={`${config.backendURL}${locationImage.url}`} />
       </div>
     );
   }
 }
 
-Location.propTypes = {
+Group.propTypes = {
   agglomerateFetch: PropTypes.func.isRequired,
   agglomerate: PropTypes.objectOf(Object).isRequired,
 };
@@ -39,4 +39,4 @@ export const mapDispatchToProps = dispatch => ({
   agglomerateFetch: () => dispatch(agglomerateFetchData()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Location);
+export default connect(mapStateToProps, mapDispatchToProps)(Group);
