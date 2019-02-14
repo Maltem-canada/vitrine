@@ -37,6 +37,24 @@
           width: 100px;
         }
       }
+      &-apply {
+        background: var(--maltem_red);
+        padding: 10px 20px;
+        margin: 2px 4px;
+        font-size: 1em;
+        color: var(--maltem_white);
+        border: 0;
+        box-shadow: none;
+        border-radius: 5px;
+        transition: padding linear .1s, margin linear .1s;
+        cursor: pointer;
+        text-decoration: none;
+        &:hover {
+          transition: padding linear .1s, margin linear .1s;
+          padding: 12px 24px;
+          margin: 0;
+        }
+      }
     }
   }
   &-title {
