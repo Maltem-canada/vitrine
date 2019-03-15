@@ -208,6 +208,9 @@
   }
   .slide-welcome {
     .welcome {
+      &-red {
+        color: var(--maltem_white);
+      }
       &-main {
         &-back {
           height: 50vh;
