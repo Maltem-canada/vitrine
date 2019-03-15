@@ -29,3 +29,20 @@
     }
   }
 }
+@media (max-width: 1025px) {
+  .slide-services {
+    width: 50vw;
+    .slide-content {
+      width: 100%;
+      .service {
+        &-wrapper {
+          padding: 2vw 5vw !important;
+        }
+        &-item {
+          font-size: 3vw;
+
+        }
+      }
+    }
+  }
+}

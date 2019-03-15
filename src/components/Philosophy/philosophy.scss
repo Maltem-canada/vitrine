@@ -90,3 +90,10 @@
     }
   }
 }
+@media (max-width: 1025px) {
+  .philosophy {
+    &-header {
+      height: 50vh;
+    }
+  }
+}

@@ -72,6 +72,11 @@ h1 {
   font-family: MaltemSecondFont;
   margin-top: 0;
 }
+@media (max-width: 1025px) {
+  h1 {
+    font-size: 7vw;
+  }
+}
 
 img {
   -webkit-animation: fadeIn 1s;
