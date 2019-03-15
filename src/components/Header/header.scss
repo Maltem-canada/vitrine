@@ -62,22 +62,18 @@
         padding-right: 20px;
       }
     }
-    select {
-      border: 1px solid var(--maltem_grey);
-      font-size: 1em;
-      padding: 10px;
-      &::-ms-expand {
-        display: none;
-      }
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      text-indent: 1px;
-      text-overflow: '';
-      &:focus {
-        outline:none;
-      }
-      option {
-        padding: 10px;
+    &-lang {
+      button {
+        padding: 10px 20px !important;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        outline: none;
+        font-size: 1vw;
+        &.active {
+          background-color: var(--maltem_red);
+          color: var(--maltem_white);
+        }
       }
     }
   }
@@ -167,6 +163,12 @@
         display: block !important;
         > * {
           display: block !important;
+        }
+      }
+      &-lang {
+        margin-top: 2vw;
+        button {
+          font-size: 3vw;
         }
       }
     }

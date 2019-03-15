@@ -1,6 +1,6 @@
 {
   "name": "maltem-ca-vitrine",
-  "version": "2.2.4",
+  "version": "2.3.0",
   "description": "Maltem's Canada official website.",
   "scripts": {
     "start": "webpack-dev-server --mode development --open src/index.jsx",
@@ -12,7 +12,7 @@
     "cover": "rm -rf coverage && NODE_ENV=test nyc npm test",
     "cover:view": "open coverage/lcov-report/index.html",
     "check": "npm audit",
-    "pre-commit": "npm-run-all --parallel lint cover check"
+    "pre-commit": "npm-run-all --parallel lint cover"
   },
   "repository": {
     "type": "git",
@@ -85,7 +85,7 @@
     "react-favicon": "0.0.14",
     "react-ga": "^2.5.7",
     "react-redux": "^5.1.1",
-    "react-scripts": "^2.1.3",
+    "react-scripts": "^2.1.8",
     "react-slick": "^0.23.2",
     "react-typist": "^2.0.5",
     "redux": "^4.0.0",

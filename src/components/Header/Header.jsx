@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGripLines } from '@fortawesome/free-solid-svg-icons';
 import { agglomerateFetchData } from '../../actions/agglomerate';
-import { setLanguage } from '../../services/language';
+import { setLanguage, getLanguage } from '../../services/language';
 import getGA from '../../services/googleAnalytics';
 import config from '../../config';
 import './header.scss';
@@ -82,8 +82,7 @@ export class Header extends Component {
     }
   }
 
-  changeLanguage(event) {
-    const lang = event.target.value;
+  changeLanguage(lang) {
     setLanguage(lang);
     const { agglomerateFetch } = this.props;
     agglomerateFetch();
@@ -107,7 +106,6 @@ export class Header extends Component {
         maltemLogo,
         cursor32x32,
         list,
-        languagePlaceholder,
       },
     } = this.props;
     const {
@@ -136,16 +134,19 @@ export class Header extends Component {
             <a onClick={() => this.headerClicked('Contact')} href="#contact">{headerContactTitle}</a>
           </div>
           <div>
-            <select onChange={this.changeLanguage} value="default">
-              <option value="default" disabled>{languagePlaceholder}</option>
+            <div className="header-content-lang">
               {
                 list.map(l => (
-                  <option key={l.language} value={l.language.toLowerCase()}>
-                    {l.name}
-                  </option>
+                  <button
+                    className={getLanguage() === l.language ? 'active' : ''}
+                    type="submit"
+                    onClick={() => this.changeLanguage(l.language)}
+                  >
+                    {l.language.toUpperCase()}
+                  </button>
                 ))
               }
-            </select>
+            </div>
           </div>
         </div>
         <div className="header-scroll">
