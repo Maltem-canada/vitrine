@@ -17,6 +17,7 @@ export class Philosophy extends Component {
         philosophyTitle,
         ourPhilosophyPhoto,
         philosophyLastImage,
+        PhilosophyLastImageLink,
         philosophies,
       },
     } = this.props;
@@ -57,10 +58,12 @@ export class Philosophy extends Component {
           }
           <div className="philosophy-last-image philosophy-content-item">
             <div className="philosophy-content-item-row">
-              <img
-                alt="Maltem Aldimie fundation"
-                src={`${config.backendURL}${philosophyLastImage.url}`}
-              />
+              <a href={PhilosophyLastImageLink} target="_blank" rel="noopener noreferrer">
+                <img
+                  alt="Maltem Aldimie fundation"
+                  src={`${config.backendURL}${philosophyLastImage.url}`}
+                />
+              </a>
             </div>
           </div>
         </div>
