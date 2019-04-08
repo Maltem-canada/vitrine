@@ -26,9 +26,11 @@ export class Group extends Component {
         <div className="group-list">
           {
             filiales.map(filiale => (
-              <a className="group-list-link" rel="noopener noreferrer" target="_blank" href={filiale.link}>
-                <img className="group-list-link-image" alt={filiale.image.name} src={`${config.backendURL}${filiale.image.url}`} />
-              </a>
+              <div>
+                <a className="group-list-link" rel="noopener noreferrer" target="_blank" href={filiale.link}>
+                  <img className="group-list-link-image" alt={filiale.image.name} src={`${config.backendURL}${filiale.image.url}`} />
+                </a>
+              </div>
             ))
           }
         </div>

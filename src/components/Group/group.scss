@@ -12,15 +12,35 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 20px 0;
+    > div {
+      width: 150px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
     &-link {
       &-image {
         width: 150px;
         padding: 0 20px;
+        transition: width 1s;
+        &:hover {
+          width: 170px;
+        }
       }
     }
   }
   &-locations {
     width: 100%;
-    margin-bottom: 50px;
+    margin: 50px 0;
+  }
+}
+
+
+@media only screen and (max-width : 1000px) {
+  .group {
+    &-locations {
+      margin: 50px 0 100px 0;
+    }
   }
 }
