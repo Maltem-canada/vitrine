@@ -54,7 +54,7 @@ export default class App extends Component {
         <SlideComponent className="slide-philosophy">
           <PhilosophyComp />
         </SlideComponent>
-        <SlideComponent className="slide-team" id="team">
+        <SlideComponent className="slide-team">
           <TeamComp />
         </SlideComponent>
         <SlideComponent className="slide-library" id="library">

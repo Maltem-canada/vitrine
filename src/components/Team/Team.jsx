@@ -45,7 +45,7 @@ export class Team extends Component {
         : config.backendURL + teamProfilePlaceholder.url);
 
     return (
-      <div className="team">
+      <div className="team" id="team">
         <h1 className="team-title decorate-title">{teamTitle}</h1>
         <Slider {...settings} className="team-list">
           {
