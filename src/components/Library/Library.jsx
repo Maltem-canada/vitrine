@@ -24,7 +24,9 @@ export class Library extends Component {
         {
           library.map(
             ({ photo }) => (
-              <img key={photo.id} src={config.backendURL + photo.url} alt={photo.description} />
+              <div>
+                <img key={photo.id} src={config.backendURL + photo.url} alt={photo.description} />
+              </div>
             ),
           )
         }

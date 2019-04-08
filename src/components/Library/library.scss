@@ -1,19 +1,23 @@
 .library {
-  margin-top: 100px;
+  height: 640px;
+  margin-bottom: 100px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  //overflow: hidden;
-  img {
-    width: 49vw;
-    height: auto;
-    &:first-child {
-      transform: rotate(-10deg);
-    }
-    &:last-child {
-      transform: rotate(12deg);
+  overflow: hidden;
+  > div {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    img {
+      width: auto;
+      height: 300px;
     }
   }
 }
