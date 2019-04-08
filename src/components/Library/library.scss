@@ -1,12 +1,14 @@
 .library {
   height: 640px;
-  margin-bottom: 100px;
+  margin-bottom: 60px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background-color: var(--maltem_grey);
+  padding: 10px;
   > div {
     width: 300px;
     height: 300px;

@@ -25,13 +25,18 @@ export class Expertise extends Component {
         <div className="hashtags">
           {
             expertise.map(({
-              hashtag, description, logo, id,
+              hashtag, description, logo, id, logoHover,
             }) => (
               <div className="hashtags-item" key={id}>
                 <img
                   className="hashtags-item-image"
                   alt={`Maltem ${hashtag} expertise`}
                   src={config.backendURL + logo.url}
+                />
+                <img
+                  className="hashtags-item-image-hover"
+                  alt={`Maltem ${hashtag} expertise`}
+                  src={config.backendURL + (logoHover ? logoHover.url : logo.url)}
                 />
                 <p className="hashtags-item-hashtag">{hashtag}</p>
                 <p className="hashtags-item-description">{description}</p>

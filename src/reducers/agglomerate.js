@@ -26,6 +26,7 @@ export const initialState = {
   contactTitle: '',
   languagePlaceholder: '',
   library: [],
+  filiales: [],
 };
 const initialSateList = {
   list: [],

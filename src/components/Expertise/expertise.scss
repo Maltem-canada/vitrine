@@ -16,12 +16,29 @@
       align-items: flex-start;
       align-content: space-evenly;
       &-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 15vw;
         padding: 1vw;
         font-size: 1.5vw;
+        &:hover {
+          .hashtags-item-image-hover {
+            display: inline;
+          }
+          .hashtags-item-image {
+            display: none;
+          }
+        }
         &-image {
           text-align: center;
           height: 14vw;
+          &-hover {
+            display: none;
+            text-align: center;
+            height: 14vw;
+          }
         }
         &-hashtag {
           font-size: 2vw;

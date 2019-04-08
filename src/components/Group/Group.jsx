@@ -14,13 +14,25 @@ export class Group extends Component {
   render() {
     const {
       agglomerate: {
+        groupTitle,
         locationImage,
+        filiales,
       },
     } = this.props;
 
     return (
       <div className="group">
-        <img alt="Maltem group locations" src={`${config.backendURL}${locationImage.url}`} />
+        <h1 className="decorate-title">{groupTitle}</h1>
+        <div className="group-list">
+          {
+            filiales.map(filiale => (
+              <a className="group-list-link" rel="noopener noreferrer" target="_blank" href={filiale.link}>
+                <img className="group-list-link-image" alt={filiale.image.name} src={`${config.backendURL}${filiale.image.url}`} />
+              </a>
+            ))
+          }
+        </div>
+        <img className="group-locations" alt={locationImage.name} src={`${config.backendURL}${locationImage.url}`} />
       </div>
     );
   }

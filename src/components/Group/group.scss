@@ -1,6 +1,26 @@
 .group {
+  h1 {
+    text-align: left;
+    margin-left: 3vw;
+  }
   margin-bottom: -10px;
-  img {
+
+  &-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    &-link {
+      &-image {
+        width: 150px;
+        padding: 0 20px;
+      }
+    }
+  }
+  &-locations {
     width: 100%;
+    margin-bottom: 50px;
   }
 }
