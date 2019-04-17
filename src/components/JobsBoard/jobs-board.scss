@@ -37,6 +37,17 @@
           width: 100px;
         }
       }
+      &-description {
+        font-family: MaltemPlaner;
+        max-width: 80vw;
+        max-height: 50vh;
+        //overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        font-size: 16px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
       &-apply {
         background: var(--maltem_red);
         padding: 10px 20px;

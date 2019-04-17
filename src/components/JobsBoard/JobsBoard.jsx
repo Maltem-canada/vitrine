@@ -39,7 +39,7 @@ export class JobsBoard extends Component {
         </button>
         <div className="jobs-popup-content">
           <h1 className="jobs-popup-content-name">{data.name}</h1>
-          <div className="jobs-popup-content-description">{data.description}</div>
+          <pre className="jobs-popup-content-description">{data.description}</pre>
           <a className="jobs-popup-content-apply" href={`mailto:job.canada@maltem.com?subject=${`Application for ${data.name}`}&body=${body}`}>Apply</a>
         </div>
       </div>
