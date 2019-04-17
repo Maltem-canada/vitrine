@@ -23,10 +23,11 @@
     &-link {
       &-image {
         width: 150px;
-        padding: 0 20px;
-        transition: width 1s;
+        margin: 10px;
+        transition: width 1s, margin 1s;
         &:hover {
           width: 170px;
+          margin: 0;
         }
       }
     }
