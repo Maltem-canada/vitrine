@@ -9,7 +9,6 @@ import { faTimes } from '@fortawesome/fontawesome-free-solid';
 import { agglomerateFetchData } from '../../actions/agglomerate';
 import { getSlideShowLength, getSlideShowSettings } from '../../utils/slideShow';
 import getGA from '../../services/googleAnalytics';
-import bodyTemplate from '../../template/apply-job';
 import config from '../../config';
 import './jobs-board.scss';
 
@@ -26,7 +25,6 @@ export class JobsBoard extends Component {
 
   getPopupContent(data) {
     const { togglePopup } = this.props;
-    const body = bodyTemplate({ description: data.description });
     return (
       <div className="jobs-popup">
         <button
@@ -40,7 +38,7 @@ export class JobsBoard extends Component {
         <div className="jobs-popup-content">
           <h1 className="jobs-popup-content-name">{data.name}</h1>
           <pre className="jobs-popup-content-description">{data.description}</pre>
-          <a className="jobs-popup-content-apply" href={`mailto:job.canada@maltem.com?subject=${`Application for ${data.name}`}&body=${body}`}>Apply</a>
+          <a className="jobs-popup-content-apply" href={`mailto:job.canada@maltem.com?subject=${`Application for ${data.name}`}`}>Apply</a>
         </div>
       </div>
     );
