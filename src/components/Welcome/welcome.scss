@@ -3,40 +3,49 @@
     border-radius: 0;
     border-radius: 0;
   }
+
   50% {
     border-radius: 50%;
     border-radius: 50%;
   }
+
   65% {
     border-radius: 0;
     border-radius: 0;
   }
 }
+
 @keyframes astronaut {
   0% {
     margin-top: 0;
     margin-left: 0;
   }
+
   20% {
     margin-top: 5vw;
     margin-left: 1vw;
   }
+
   50% {
     margin-top: -2vw;
     margin-left: 3vw;
   }
+
   75% {
     margin-top: -3vw;
     margin-left: -4vw;
   }
 }
+
 @keyframes textAnim {
   35% {
     margin-top: 23vw;
   }
+
   50% {
     margin-top: 20vw;
   }
+
   65% {
     margin-top: 23vw;
   }
@@ -51,7 +60,9 @@
 
   .welcome {
     font-size: 1.5em;
+
     &-container {
+      font-weight: bold;
       margin-bottom: 60px;
       min-height: 6em;
       display: flex;
@@ -62,12 +73,15 @@
       align-content: center;
       padding-left: 3vw;
       padding-right: 3vw;
+
       &-typing {
         text-align: left;
         height: auto;
+
         .Cursor {
           color: var(--maltem_red);
         }
+
         .square-cursor {
           height: .7em;
           width: 18px;
@@ -75,10 +89,12 @@
         }
       }
     }
+
     &-main {
       &-back {
         height: 100vh;
         overflow: hidden;
+
         &-astro {
           background-position: -10vw center;
           background-repeat: no-repeat;
@@ -90,6 +106,7 @@
           animation-iteration-count: infinite;
         }
       }
+
       &-background {
         position: absolute;
         background-color: var(--maltem_red_transparent);
@@ -97,12 +114,14 @@
         width: 100vw;
         margin-top: -100vh;
       }
+
       &-front {
         position: absolute;
         height: 100vh;
         margin-top: -100vh;
         left: 0;
         right: 0;
+
         &-square {
           color: var(--maltem_white);
           display: flex;
@@ -112,12 +131,14 @@
           align-items: center;
           align-content: center;
           height: 100vh;
+
           &-left {
             border: 0;
             height: 30vw;
             width: 15vw;
             overflow: hidden;
-            > div {
+
+            >div {
               border-left: 2vw solid var(--maltem_white);
               border-top: 2vw solid var(--maltem_white);
               border-bottom: 2vw solid var(--maltem_white);
@@ -127,6 +148,7 @@
               height: 26vw;
               width: 26vw;
             }
+
             &-title {
               animation-name: textAnim;
               animation-duration: 5s;
@@ -137,15 +159,18 @@
               margin-left: 4vw;
             }
           }
+
           &-right {
             border: 0;
             height: 30vw;
             width: 15vw;
             overflow: hidden;
+
             &-top {
               height: 10vw;
               overflow: hidden;
-              > div {
+
+              >div {
                 border-right: 2vw solid var(--maltem_red);
                 border-top: 2vw solid var(--maltem_red);
                 border-bottom: 2vw solid var(--maltem_red);
@@ -157,11 +182,13 @@
                 margin-left: -13vw;
               }
             }
+
             &-bottom {
               margin-top: 9vw;
               height: 11vw;
               overflow: hidden;
-              > div {
+
+              >div {
                 border-right: 2vw solid var(--maltem_red);
                 border-top: 2vw solid var(--maltem_red);
                 border-bottom: 2vw solid var(--maltem_red);
@@ -174,6 +201,7 @@
                 margin-top: -19vw;
               }
             }
+
             &-title {
               text-align: center;
               position: absolute;
@@ -188,6 +216,7 @@
         }
       }
     }
+
     &-red {
       color: var(--maltem_red);
     }
@@ -199,64 +228,80 @@
     35% {
       margin-top: 33vw;
     }
+
     50% {
       margin-top: 30vw;
     }
+
     65% {
       margin-top: 33vw;
     }
   }
+
   .slide-welcome {
     .welcome {
       &-red {
         color: var(--maltem_white);
       }
+
       &-main {
         &-back {
           height: 50vh;
         }
+
         &-background {
           height: 50vh;
           margin-top: -50vh;
         }
+
         &-front {
           height: 50vh;
           margin-top: -50vh;
+
           &-square {
             height: 50vh;
+
             &-left {
               height: 40vw;
               width: 20vw;
-              > div {
+
+              >div {
                 height: 36vw;
                 width: 36vw;
               }
+
               &-title {
                 margin-top: 33vw;
                 margin-left: 9vw;
               }
             }
+
             &-right {
               height: 40vw;
               width: 20vw;
+
               &-top {
                 height: 15vw;
-                > div {
+
+                >div {
                   height: 26vw;
                   width: 36vw;
                   margin-left: -20vw;
                 }
               }
+
               &-bottom {
                 margin-top: 9vw;
                 height: 16vw;
-                > div {
+
+                >div {
                   height: 31vw;
                   width: 36vw;
                   margin-left: -20vw;
                   margin-top: -19vw;
                 }
               }
+
               &-title {
                 padding: 1vw;
                 font-size: 4vw;
